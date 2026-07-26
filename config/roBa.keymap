@@ -80,7 +80,7 @@
             bindings = <&mo>, <&mkp>;
 
             #binding-cells = <2>;
-            hold-trigger-key-positions = <39>;
+            hold-trigger-key-positions = <41>;
             tapping-term-ms = <0>;
         };
     };
