@@ -110,7 +110,7 @@
             bindings = <
 &kp ESCAPE      &trans  &trans  &trans     &trans                                &kp C_BRI_UP  &kp PAGE_UP  &kp UP_ARROW  &kp PAGE_DOWN  &kp C_VOLUME_UP
 &kp LEFT_SHIFT  &trans  &trans  &trans     &trans    &trans      &trans          &kp C_BRI_DN  &kp LEFT     &trans        &kp RIGHT      &kp C_VOLUME_DOWN
-&trans          &trans  &trans  &trans     &trans    &trans      &trans          &trans        &kp HOME     &kp DOWN      &kp END        &trans
+&kp LCTRL       &trans  &trans  &trans     &trans    &trans      &trans          &trans        &kp HOME     &kp DOWN      &kp END        &kp C_MUTE
 &trans          &trans  &trans  &kp ENTER  &mkp MB1  &trans      &kp LEFT_SHIFT  &mkp MB2                                                &trans
             >;
         };
