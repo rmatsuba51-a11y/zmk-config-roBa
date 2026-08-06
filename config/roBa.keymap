@@ -126,10 +126,10 @@
 
         layer_4 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                               &kp KP_EQUAL  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_0
-&trans  &trans  &trans  &trans  &trans  &trans      &kp KP_ASTERISK  &kp KP_PLUS   &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp KP_DOT
-&trans  &trans  &trans  &trans  &trans  &trans      &kp KP_SLASH     &kp KP_MINUS  &kp NUMBER_7  &kp NUMBER_8  &kp N9        &kp INT3
-&trans  &trans  &trans  &trans  &trans  &trans      &trans           &trans                                                  &trans
+&trans  &trans  &trans  &trans  &trans                               &kp LS(MINUS)  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_0
+&trans  &trans  &trans  &trans  &trans  &trans      &kp KP_ASTERISK  &kp KP_PLUS    &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp KP_DOT
+&trans  &trans  &trans  &trans  &trans  &trans      &kp KP_SLASH     &kp KP_MINUS   &kp NUMBER_7  &kp NUMBER_8  &kp N9        &kp INT3
+&trans  &trans  &trans  &trans  &trans  &trans      &trans           &trans                                                   &trans
             >;
         };
 
