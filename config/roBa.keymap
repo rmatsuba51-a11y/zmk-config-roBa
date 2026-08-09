@@ -84,6 +84,125 @@
             bindings = <&kp F &kp RIGHT_BRACKET>;
             label = "PA_MACRO";
         };
+
+        zu_macro: zu_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp R &kp LEFT_BRACKET>;
+            label = "ZU_MACRO";
+        };
+
+        de_macro: de_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp W &kp LEFT_BRACKET>;
+            label = "DE_MACRO";
+        };
+
+        da_macro: da_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp Q &kp LEFT_BRACKET>;
+            label = "DA_MACRO";
+        };
+
+        do_macro: do_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp S &kp LEFT_BRACKET>;
+            label = "DO_MACRO";
+        };
+
+        zi_macro: zi_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp D &kp LEFT_BRACKET>;
+            label = "ZI_MACRO";
+        };
+
+        ba_macro: ba_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp F &kp LEFT_BRACKET>;
+            label = "BA_MACRO";
+        };
+
+        gi_macro: gi_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp G &kp LEFT_BRACKET>;
+            label = "GI_MACRO";
+        };
+
+        gu_macro: gu_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp H &kp LEFT_BRACKET>;
+            label = "GU_MACRO";
+        };
+
+        du_macro: du_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp Z &kp LEFT_BRACKET>;
+            label = "DU_MACRO";
+        };
+
+        za_macro: za_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp X &kp LEFT_BRACKET>;
+            label = "ZA_MACRO";
+        };
+
+        zo_macro: zo_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp C &kp LEFT_BRACKET>;
+            label = "ZO_MACRO";
+        };
+
+        bi_macro: bi_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp V &kp LEFT_BRACKET>;
+            label = "BI_MACRO";
+        };
+
+        go_macro: go_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp B &kp LEFT_BRACKET>;
+            label = "GO_MACRO";
+        };
+
+        pi_macro: pi_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp V &kp RIGHT_BRACKET>;
+            label = "PI_MACRO";
+        };
+
+        pu_macro: pu_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_2 &kp RIGHT_BRACKET>;
+            label = "PU_MACRO";
+        };
+
+        pe_macro: pe_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp EQUAL &kp RIGHT_BRACKET>;
+            label = "PE_MACRO";
+        };
+
+        po_macro: po_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS &kp RIGHT_BRACKET>;
+            label = "PO_MACRO";
+        };
     };
 
     behaviors {
@@ -149,10 +268,10 @@
 
         layer_4 {
             bindings = <
-&trans  &trans  &trans  &trans  &ga_macro                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans     &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans     &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans     &trans      &trans  &trans                          &trans
+&da_macro  &de_macro  &trans     &zu_macro  &ga_macro                         &trans     &trans  &trans  &trans  &trans
+&trans     &do_macro  &zi_macro  &trans     &gi_macro  &trans         &trans  &gu_macro  &trans  &trans  &trans  &trans
+&du_macro  &za_macro  &zo_macro  &bi_macro  &go_macro  &ba_macro      &trans  &trans     &trans  &trans  &trans  &trans
+&trans     &trans     &trans     &trans     &trans     &trans         &trans  &trans                             &trans
             >;
         };
 
@@ -176,10 +295,19 @@
 
         layer_7 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                         &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans         &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &pa_macro      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans         &trans  &trans                          &trans
+&trans  &pu_macro  &trans     &trans     &trans                         &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &pe_macro  &po_macro  &trans  &trans         &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans     &pi_macro  &trans  &pa_macro      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans     &trans     &trans  &trans         &trans  &trans                          &trans
+            >;
+        };
+
+        layer_8 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
         };
     };
