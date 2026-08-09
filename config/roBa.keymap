@@ -203,6 +203,34 @@
             bindings = <&kp MINUS &kp RIGHT_BRACKET>;
             label = "PO_MACRO";
         };
+
+        ge_macro: ge_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp APOSTROPHE &kp LEFT_BRACKET>;
+            label = "GE_MACRO";
+        };
+
+        bo_macro: bo_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS &kp LEFT_BRACKET>;
+            label = "BO_MACRO";
+        };
+
+        be_macro: be_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp EQUAL &kp LEFT_BRACKET>;
+            label = "BE_MACRO";
+        };
+
+        bu_macro: bu_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_2 &kp LEFT_BRACKET>;
+            label = "BU_MACRO";
+        };
     };
 
     behaviors {
@@ -242,8 +270,8 @@
         FUNCTION {
             bindings = <
 &kp NUMBER_1        &kp NUMBER_2         &kp NUMBER_3  &kp NUMBER_4  &kp N5                                         &kp NUMBER_6              &kp N7   &kp N8           &kp N9     &kp N0
-&kp LEFT_SHIFT      &kp INTERNATIONAL_3  &kp EQUAL     &kp MINUS     &mt LCTRL QUESTION  &kp LEFT_ALT      &kp TAB  &mt LEFT_SHIFT SEMICOLON  &kp SQT  &kp NON_US_HASH  &kp SLASH  &kp INTERNATIONAL_1
-&kp LS(Z)           &kp F2               &kp F3        &kp F4        &kp F5              &kp F6            &kp F7   &kp F8                    &kp F9   &kp F10          &kp F11    &kp F12
+&kp LEFT_SHIFT      &kp INTERNATIONAL_3  &kp EQUAL     &kp MINUS     &mt LCTRL QUESTION  &kp LEFT_ALT      &kp TAB  &mt LEFT_SHIFT SEMICOLON  &kp SQT  &kp NON_US_HASH  &kp SLASH  &lt_retro 8 INTERNATIONAL_1
+&kp LS(Z)           &kp F2               &kp F3        &kp F4        &kp F5              &kp F6            &kp F7   &kp F8                    &kp F9   &kp F10          &kp F11    &lt_retro 9 F12
 &kp LA(LC(DELETE))  &kp F1               &kp LCTRL     &kp DELETE    &kp LC(Z)           &kp LC(Y)         &trans   &trans                                                         &kp LC(LS(SEMI))
             >;
         };
@@ -295,19 +323,28 @@
 
         layer_7 {
             bindings = <
-&trans  &pu_macro  &trans     &trans     &trans                         &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &pe_macro  &po_macro  &trans  &trans         &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans     &pi_macro  &trans  &pa_macro      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans     &trans     &trans  &trans         &trans  &trans                          &trans
+&trans  &trans  &trans  &trans     &trans                         &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans     &trans  &trans         &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &pi_macro  &trans  &pa_macro      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans     &trans  &trans         &trans  &trans                          &trans
             >;
         };
 
         layer_8 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+&trans  &bu_macro  &trans     &trans     &trans                      &trans  &trans     &trans  &trans  &trans
+&trans  &trans     &be_macro  &bo_macro  &trans  &trans      &trans  &trans  &ge_macro  &trans  &trans  &trans
+&trans  &trans     &trans     &trans     &trans  &trans      &trans  &trans  &trans     &trans  &trans  &trans
+&trans  &trans     &trans     &trans     &trans  &trans      &trans  &trans                             &trans
+            >;
+        };
+
+        layer_9 {
+            bindings = <
+&trans  &pu_macro  &trans     &trans     &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &pe_macro  &po_macro  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans     &trans     &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans     &trans     &trans  &trans      &trans  &trans                          &trans
             >;
         };
     };
