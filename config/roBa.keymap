@@ -238,6 +238,13 @@
             bindings = <&kp P &kp LEFT_BRACKET>;
             label = "ZE_MACRO";
         };
+
+        di_macro: di_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp A &kp LEFT_BRACKET>;
+            label = "DI_MACRO";
+        };
     };
 
     behaviors {
@@ -304,7 +311,7 @@
         layer_4 {
             bindings = <
 &da_macro  &de_macro  &trans     &zu_macro  &ga_macro                         &trans     &trans  &trans  &trans  &ze_macro
-&trans     &do_macro  &zi_macro  &trans     &gi_macro  &trans         &trans  &gu_macro  &trans  &trans  &trans  &trans
+&di_macro  &do_macro  &zi_macro  &trans     &gi_macro  &trans         &trans  &gu_macro  &trans  &trans  &trans  &trans
 &du_macro  &za_macro  &zo_macro  &bi_macro  &go_macro  &ba_macro      &trans  &trans     &trans  &trans  &trans  &trans
 &trans     &trans     &trans     &trans     &trans     &trans         &trans  &trans                             &trans
             >;
