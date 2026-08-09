@@ -108,7 +108,7 @@
             bindings = <
 &kp Q             &kp W         &kp E          &kp R          &kp T                                                            &kp Y         &kp U      &kp I      &kp O    &kp P
 &mt LEFT_SHIFT A  &kp S         &lt_retro 3 D  &kp SPACE      &mt LCTRL G  &kp LEFT_ALT                &kp TAB                 &mt LSHIFT H  &kp ENTER  &lt 5 K    &kp L    &lt_retro 6 LEFT_BRACKET
-&mt LCTRL Z       &kp X         &kp C          &kp V          &kp B        &kp F                       &mt RIGHT_SHIFT J       &kp N         &kp M      &kp COMMA  &kp DOT  &kp RIGHT_BRACKET
+&mt LCTRL Z       &kp X         &kp C          &kp V          &kp B        &kp F                       &lt_retro 4 J           &kp N         &kp M      &kp COMMA  &kp DOT  &kp RIGHT_BRACKET
 &kp LS(F5)        &kp LEFT_WIN  &kp LCTRL      &kp BACKSPACE  &mkp MB1     &lt_retro 2 LANGUAGE_2      &lt_retro 1 LANGUAGE_1  &mkp MB2                                     &kp LS(LG(S))
             >;
         };
