@@ -74,14 +74,14 @@
         ga_macro: ga_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp T &kp AT_SIGN>;
+            bindings = <&kp T &kp LEFT_BRACKET>;
             label = "GA_MACRO";
         };
 
         pa_macro: pa_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp F &kp LEFT_BRACKET>;
+            bindings = <&kp F &kp RIGHT_BRACKET>;
             label = "PA_MACRO";
         };
     };
