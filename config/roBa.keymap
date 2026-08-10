@@ -326,7 +326,7 @@
             >;
         };
 
-        layer_5 {
+        layer_6 {
             bindings = <
 &da_macro  &de_macro  &trans     &zu_macro  &ga_macro                         &trans     &trans  &trans  &trans  &ze_macro
 &di_macro  &do_macro  &zi_macro  &trans     &gi_macro  &trans         &trans  &gu_macro  &trans  &trans  &trans  &trans
