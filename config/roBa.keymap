@@ -3,64 +3,36 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
+// ==========================================================
+// ロバスト性（堅牢性）向上のためのグローバル設定
+// ==========================================================
+
 &mt {
     flavor = "balanced";
-    quick-tap-ms = <0>;
-    tapping-term-ms = <125>;
+    quick-tap-ms = <175>;      // 連続入力を「タップ」として認識しやすくし、チャタリングを抑制
+    tapping-term-ms = <200>;   // 誤判定を防ぐため少し長めに設定
     retro-tap;
 };
 
 &lt {
-    tapping-term-ms = <120>;
     flavor = "hold-preferred";
-    quick-tap-ms = <0>;
+    quick-tap-ms = <175>;
+    tapping-term-ms = <200>;
 };
 
-&trackball {
-    //automouse-layer = <5>;
-    scroll-layers = <4>;
-
-    // arrows {
-    //     layers = <3>;
-    //     bindings =
-    //         <&kp RIGHT_ARROW>,
-    //         <&kp LEFT_ARROW>,
-    //         <&kp UP_ARROW>,
-    //         <&kp DOWN_ARROW>;
-    //     tick = <10>;
-    //     wait-ms = <5>;
-    //     tap-ms = <5>;
-    // };
+// 物理的な信号のノイズ（チャタリング）をハードウェアレベルで除去
+&kscan0 {
+    debounce-period = <15>; // 5msから15msに強化。50連打などの異常入力を物理的に防ぐ
 };
 
 / {
     combos {
         compatible = "zmk,combos";
-
-        tab {
-            bindings = <&kp TAB>;
-            key-positions = <11 12>;
-        };
-
-        shift_tab {
-            bindings = <&kp LS(TAB)>;
-            key-positions = <12 13>;
-        };
-
-        muhennkann {
-            bindings = <&to_layer_0 INT_MUHENKAN>;
-            key-positions = <11 10>;
-        };
-
-        double_quotation {
-            bindings = <&kp DOUBLE_QUOTES>;
-            key-positions = <20 21>;
-        };
-
-        eq {
-            bindings = <&kp EQUAL>;
-            key-positions = <24 25>;
-        };
+        tab { bindings = <&kp TAB>; key-positions = <11 12>; };
+        shift_tab { bindings = <&kp LS(TAB)>; key-positions = <12 13>; };
+        muhennkann { bindings = <&to_layer_0 INT_MUHENKAN>; key-positions = <11 10>; };
+        double_quotation { bindings = <&kp DOUBLE_QUOTES>; key-positions = <20 21>; };
+        eq { bindings = <&kp EQUAL>; key-positions = <24 25>; };
     };
 
     macros {
@@ -70,181 +42,31 @@
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
-
-        ga_macro: ga_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp T &kp LEFT_BRACKET>;
-            label = "GA_MACRO";
-        };
-
-        pa_macro: pa_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp F &kp RIGHT_BRACKET>;
-            label = "PA_MACRO";
-        };
-
-        zu_macro: zu_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp R &kp LEFT_BRACKET>;
-            label = "ZU_MACRO";
-        };
-
-        de_macro: de_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp W &kp LEFT_BRACKET>;
-            label = "DE_MACRO";
-        };
-
-        da_macro: da_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp Q &kp LEFT_BRACKET>;
-            label = "DA_MACRO";
-        };
-
-        do_macro: do_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp S &kp LEFT_BRACKET>;
-            label = "DO_MACRO";
-        };
-
-        zi_macro: zi_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp D &kp LEFT_BRACKET>;
-            label = "ZI_MACRO";
-        };
-
-        ba_macro: ba_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp F &kp LEFT_BRACKET>;
-            label = "BA_MACRO";
-        };
-
-        gi_macro: gi_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp G &kp LEFT_BRACKET>;
-            label = "GI_MACRO";
-        };
-
-        gu_macro: gu_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp H &kp LEFT_BRACKET>;
-            label = "GU_MACRO";
-        };
-
-        du_macro: du_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp Z &kp LEFT_BRACKET>;
-            label = "DU_MACRO";
-        };
-
-        za_macro: za_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp X &kp LEFT_BRACKET>;
-            label = "ZA_MACRO";
-        };
-
-        zo_macro: zo_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp C &kp LEFT_BRACKET>;
-            label = "ZO_MACRO";
-        };
-
-        bi_macro: bi_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp V &kp LEFT_BRACKET>;
-            label = "BI_MACRO";
-        };
-
-        go_macro: go_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp B &kp LEFT_BRACKET>;
-            label = "GO_MACRO";
-        };
-
-        pi_macro: pi_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp V &kp RIGHT_BRACKET>;
-            label = "PI_MACRO";
-        };
-
-        pu_macro: pu_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp NUMBER_2 &kp RIGHT_BRACKET>;
-            label = "PU_MACRO";
-        };
-
-        pe_macro: pe_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp EQUAL &kp RIGHT_BRACKET>;
-            label = "PE_MACRO";
-        };
-
-        po_macro: po_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp MINUS &kp RIGHT_BRACKET>;
-            label = "PO_MACRO";
-        };
-
-        ge_macro: ge_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp APOSTROPHE &kp LEFT_BRACKET>;
-            label = "GE_MACRO";
-        };
-
-        bo_macro: bo_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp MINUS &kp LEFT_BRACKET>;
-            label = "BO_MACRO";
-        };
-
-        be_macro: be_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp EQUAL &kp LEFT_BRACKET>;
-            label = "BE_MACRO";
-        };
-
-        bu_macro: bu_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp NUMBER_2 &kp LEFT_BRACKET>;
-            label = "BU_MACRO";
-        };
-
-        ze_macro: ze_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp P &kp LEFT_BRACKET>;
-            label = "ZE_MACRO";
-        };
-
-        di_macro: di_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp A &kp LEFT_BRACKET>;
-            label = "DI_MACRO";
-        };
+        ga_macro: ga_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp T &kp LEFT_BRACKET>; label = "GA_MACRO"; };
+        pa_macro: pa_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp F &kp RIGHT_BRACKET>; label = "PA_MACRO"; };
+        zu_macro: zu_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp R &kp LEFT_BRACKET>; label = "ZU_MACRO"; };
+        de_macro: de_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp W &kp LEFT_BRACKET>; label = "DE_MACRO"; };
+        da_macro: da_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp Q &kp LEFT_BRACKET>; label = "DA_MACRO"; };
+        do_macro: do_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp S &kp LEFT_BRACKET>; label = "DO_MACRO"; };
+        zi_macro: zi_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp D &kp LEFT_BRACKET>; label = "ZI_MACRO"; };
+        ba_macro: ba_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp F &kp LEFT_BRACKET>; label = "BA_MACRO"; };
+        gi_macro: gi_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp G &kp LEFT_BRACKET>; label = "GI_MACRO"; };
+        gu_macro: gu_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp H &kp LEFT_BRACKET>; label = "GU_MACRO"; };
+        du_macro: du_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp Z &kp LEFT_BRACKET>; label = "DU_MACRO"; };
+        za_macro: za_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp X &kp LEFT_BRACKET>; label = "ZA_MACRO"; };
+        zo_macro: zo_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp C &kp LEFT_BRACKET>; label = "ZO_MACRO"; };
+        bi_macro: bi_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp V &kp LEFT_BRACKET>; label = "BI_MACRO"; };
+        go_macro: go_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp B &kp LEFT_BRACKET>; label = "GO_MACRO"; };
+        pi_macro: pi_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp V &kp RIGHT_BRACKET>; label = "PI_MACRO"; };
+        pu_macro: pu_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp NUMBER_2 &kp RIGHT_BRACKET>; label = "PU_MACRO"; };
+        pe_macro: pe_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp EQUAL &kp RIGHT_BRACKET>; label = "PE_MACRO"; };
+        po_macro: po_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp MINUS &kp RIGHT_BRACKET>; label = "PO_MACRO"; };
+        ge_macro: ge_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp APOSTROPHE &kp LEFT_BRACKET>; label = "GE_MACRO"; };
+        bo_macro: bo_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp MINUS &kp LEFT_BRACKET>; label = "BO_MACRO"; };
+        be_macro: be_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp EQUAL &kp LEFT_BRACKET>; label = "BE_MACRO"; };
+        bu_macro: bu_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp NUMBER_2 &kp LEFT_BRACKET>; label = "BU_MACRO"; };
+        ze_macro: ze_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp P &kp LEFT_BRACKET>; label = "ZE_MACRO"; };
+        di_macro: di_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp A &kp LEFT_BRACKET>; label = "DI_MACRO"; };
     };
 
     behaviors {
@@ -252,18 +74,18 @@
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";
             bindings = <&mo>, <&to_layer_0>;
-
             #binding-cells = <2>;
             tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
         };
 
         lt_retro: lt_retro {
             compatible = "zmk,behavior-hold-tap";
             label = "LT_RETRO";
             bindings = <&mo>, <&kp>;
-
             #binding-cells = <2>;
-            tapping-term-ms = <125>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
             retro-tap;
             flavor = "balanced";
         };
