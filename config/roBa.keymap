@@ -15,19 +15,19 @@
 // ==========================================================
 &mt {
     flavor = "tap-unless-interrupted"; // 他のキーが押された瞬間にModを確定
-    tapping-term-ms = <200>;
-    quick-tap-ms = <150>;             // 連続入力の猶予を適度に短縮
+    tapping-term-ms = <250>;           // 200から250へ変更：単独押し時のタップ判定に余裕を持たせる
+    quick-tap-ms = <150>;
     retro-tap;
 };
 
 &lt {
     flavor = "tap-unless-interrupted"; // 他のキーが押された瞬間にレイヤーを確定
-    tapping-term-ms = <200>;
+    tapping-term-ms = <250>;           // 200から250へ変更
     quick-tap-ms = <150>;
 };
 
 &kscan0 {
-    debounce-period = <10>; // 15msから10msへ。応答性と堅牢性のベストバランス
+    debounce-period = <10>; 
 };
 
 / {
@@ -80,7 +80,7 @@
             label = "LAYER_TAP_TO_0";
             bindings = <&mo>, <&to_layer_0>;
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>; // 250に統一
             quick-tap-ms = <150>;
             flavor = "tap-unless-interrupted";
         };
@@ -90,7 +90,7 @@
             label = "LT_RETRO";
             bindings = <&mo>, <&kp>;
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>; // 250に統一
             quick-tap-ms = <150>;
             retro-tap;
             flavor = "tap-unless-interrupted";
