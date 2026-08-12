@@ -4,32 +4,30 @@
 #include <dt-bindings/zmk/pointing.h>
 
 // ==========================================================
-// トラックボール設定（復活させました）
+// トラックボール設定
 // ==========================================================
 &trackball {
-    // automouse-layer = <5>;
-    scroll-layers = <4>; // レイヤー4の時、ボールを転がすとスクロールになる設定
+    scroll-layers = <4>; 
 };
 
 // ==========================================================
-// ロバスト性（堅牢性）向上のためのグローバル設定
+// グローバル設定の最適化
 // ==========================================================
 &mt {
-    flavor = "balanced";
-    quick-tap-ms = <175>;      // 連続入力を「タップ」として認識しやすくし、チャタリングを抑制
-    tapping-term-ms = <200>;   // 誤判定を防ぐため少し長めに設定
+    flavor = "tap-unless-interrupted"; // 他のキーが押された瞬間にModを確定
+    tapping-term-ms = <200>;
+    quick-tap-ms = <150>;             // 連続入力の猶予を適度に短縮
     retro-tap;
 };
 
 &lt {
-    flavor = "hold-preferred";
-    quick-tap-ms = <175>;
+    flavor = "tap-unless-interrupted"; // 他のキーが押された瞬間にレイヤーを確定
     tapping-term-ms = <200>;
+    quick-tap-ms = <150>;
 };
 
-// 物理的な信号のノイズ（チャタリング）をハードウェアレベルで除去
 &kscan0 {
-    debounce-period = <15>; // 5msから15msに強化。50連打などの異常入力を物理的に防ぐ
+    debounce-period = <10>; // 15msから10msへ。応答性と堅牢性のベストバランス
 };
 
 / {
@@ -83,7 +81,8 @@
             bindings = <&mo>, <&to_layer_0>;
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            quick-tap-ms = <175>;
+            quick-tap-ms = <150>;
+            flavor = "tap-unless-interrupted";
         };
 
         lt_retro: lt_retro {
@@ -92,9 +91,9 @@
             bindings = <&mo>, <&kp>;
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            quick-tap-ms = <175>;
+            quick-tap-ms = <150>;
             retro-tap;
-            flavor = "balanced";
+            flavor = "tap-unless-interrupted";
         };
     };
 
