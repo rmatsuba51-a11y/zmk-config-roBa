@@ -17,7 +17,7 @@
     flavor = "balanced";            // 高速タイピングとホールドのバランスが最も良い設定
     tapping-term-ms = <200>;        // 250から200に短縮：ホールドの反応を改善
     quick-tap-ms = <175>;           // 連続タップの猶予を少し拡大
-    // require-prior-idle-ms = <70>;  // 【重要】高速タイピング時の誤Mod判定（Old現象）を防止
+    require-prior-idle-ms = <35>;  // 【重要】高速タイピング時の誤Mod判定（Old現象）を防止
     retro-tap;
 };
 
@@ -276,7 +276,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <175>;
-            // require-prior-idle-ms = <70>; // ★ここに追記
+            require-prior-idle-ms = <35>; // ★ここに追記
             retro-tap;
             flavor = "balanced";
         };
