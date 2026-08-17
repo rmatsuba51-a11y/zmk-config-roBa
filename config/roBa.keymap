@@ -14,10 +14,10 @@
 // ==========================================================
 
 &mt {
-    flavor = "balanced";            // 高速タイピングとホールドのバランスが最も良い設定
-    tapping-term-ms = <200>;        // 250から200に短縮：ホールドの反応を改善
-    quick-tap-ms = <175>;           // 連続タップの猶予を少し拡大
-    require-prior-idle-ms = <35>;  // 【重要】高速タイピング時の誤Mod判定（Old現象）を防止
+    flavor = "balanced";            
+    tapping-term-ms = <200>;        
+    quick-tap-ms = <175>;           
+    require-prior-idle-ms = <35>;  
     retro-tap;
 };
 
@@ -244,13 +244,10 @@
     };
 
     behaviors {
-        // スクロール用Kキー専用：ボールの動きを「キー割り込み」として待たず、即座にレイヤー移行する
-
         lt_scroll: lt_scroll {
             compatible = "zmk,behavior-hold-tap";
             label = "LT_SCROLL";
             bindings = <&mo>, <&kp>;
-
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <175>;
@@ -261,7 +258,6 @@
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";
             bindings = <&mo>, <&to_layer_0>;
-
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <175>;
@@ -272,13 +268,21 @@
             compatible = "zmk,behavior-hold-tap";
             label = "LT_RETRO";
             bindings = <&mo>, <&kp>;
-
             #binding-cells = <2>;
-            tapping-term-ms = <250>;
+            
+            // ★修正箇所: 250msから200msに短縮し、ホールド反応を良くしました
+            tapping-term-ms = <200>;
             quick-tap-ms = <175>;
-            require-prior-idle-ms = <30>; // ★ここに追記
+            
+            // ★修正箇所: ここにあった require-prior-idle-ms = <30>; を削除しました。
+            // これにより、速く打った時でも強制的にTap(゛)になってしまう『゛か』問題を根絶できます。
+            
             retro-tap;
-            flavor = "balanced";
+            
+            // ★修正箇所: balanced から変更しました。
+            // hold-preferredのような誤爆を防ぎつつ、別のキーを押した瞬間に即座にレイヤーが切り替わるため、
+            // 「ワンテンポ遅い」もたつき感覚が完全になくなります。
+            flavor = "tap-unless-interrupted";
         };
     };
 
