@@ -251,7 +251,7 @@
             #binding-cells = <2>;
             
             // ★短縮してレスポンスを向上
-            tapping-term-ms = <140>;
+            tapping-term-ms = <100>;
             quick-tap-ms = <120>;
             flavor = "hold-preferred";
         };
@@ -263,7 +263,7 @@
             #binding-cells = <2>;
             
             // ★短縮してレスポンスを向上
-            tapping-term-ms = <140>;
+            tapping-term-ms = <100>;
             quick-tap-ms = <120>;
             flavor = "balanced";
         };
@@ -275,7 +275,7 @@
             #binding-cells = <2>;
             
             // ★200msから140msへ大幅短縮。「もたつき」と「゛か 問題」を同時に消し去ります。
-            tapping-term-ms = <140>;
+            tapping-term-ms = <100>;
             // ★tapping-termに合わせてこちらも短縮します。
             quick-tap-ms = <120>;
             
