@@ -249,8 +249,10 @@
             label = "LT_SCROLL";
             bindings = <&mo>, <&kp>;
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <175>;
+            
+            // ★短縮してレスポンスを向上
+            tapping-term-ms = <140>;
+            quick-tap-ms = <120>;
             flavor = "hold-preferred";
         };
 
@@ -259,8 +261,10 @@
             label = "LAYER_TAP_TO_0";
             bindings = <&mo>, <&to_layer_0>;
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <175>;
+            
+            // ★短縮してレスポンスを向上
+            tapping-term-ms = <140>;
+            quick-tap-ms = <120>;
             flavor = "balanced";
         };
 
@@ -270,15 +274,12 @@
             bindings = <&mo>, <&kp>;
             #binding-cells = <2>;
             
-            tapping-term-ms = <200>;
-            quick-tap-ms = <175>;
+            // ★200msから140msへ大幅短縮。「もたつき」と「゛か 問題」を同時に消し去ります。
+            tapping-term-ms = <140>;
+            // ★tapping-termに合わせてこちらも短縮します。
+            quick-tap-ms = <120>;
             
-            // ★ require-prior-idle-ms は削除したままにします（「゛か」問題の解消）
             retro-tap;
-            
-            // ★ balanced に戻しました。これがレイヤーキーでのHold/Tapの切り分けに一番適しています。
-            // require-prior-idle-msが無いので、高速打鍵時の「゛か」も起きませんし、
-            // balancedなので遅く打っても確実にHold(レイヤー切り替え)になります。
             flavor = "balanced";
         };
     };
