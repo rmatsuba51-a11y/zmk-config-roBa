@@ -57,6 +57,81 @@
             bindings = <&kp EQUAL>;
             key-positions = <24 25>;
         };
+
+        // ==========================================================
+        // 【修正】Ctrl ショートカットコンボ
+        // すべて「Zキー(22) ＋ 対象の文字キー」の同時押しに設定しています
+        // ==========================================================
+
+        copy_combo {
+            bindings = <&kp LC(C)>;
+            key-positions = <22 24>; // Z(22) と C(24)
+        };
+
+        paste_combo {
+            bindings = <&kp LC(V)>;
+            key-positions = <22 25>; // Z(22) と V(25)
+        };
+
+        cut_combo {
+            bindings = <&kp LC(X)>;
+            key-positions = <22 23>; // Z(22) と X(23)
+        };
+
+        select_all_combo {
+            bindings = <&kp LC(A)>;
+            key-positions = <10 22>; // Z(22) と A(10)
+        };
+
+        save_combo {
+            bindings = <&kp LC(S)>;
+            key-positions = <11 22>; // Z(22) と S(11)
+        };
+
+        search_combo {
+            bindings = <&kp LC(F)>;
+            key-positions = <22 27>; // Z(22) と F(27)
+        };
+
+        replace_combo {
+            bindings = <&kp LC(H)>;
+            key-positions = <17 22>; // Z(22) と H(17)
+        };
+
+        print_combo {
+            bindings = <&kp LC(P)>;
+            key-positions = <9 22>;  // Z(22) と P(9)
+        };
+
+        bold_combo {
+            bindings = <&kp LC(B)>;
+            key-positions = <22 26>; // Z(22) と B(26)
+        };
+
+        italic_combo {
+            bindings = <&kp LC(I)>;
+            key-positions = <7 22>;  // Z(22) と I(7)
+        };
+
+        underline_combo {
+            bindings = <&kp LC(U)>;
+            key-positions = <6 22>;  // Z(22) と U(6)
+        };
+
+        close_tab_combo {
+            bindings = <&kp LC(W)>;
+            key-positions = <1 22>;  // Z(22) と W(1)
+        };
+
+        new_window_combo {
+            bindings = <&kp LC(N)>;
+            key-positions = <22 29>; // Z(22) と N(29)
+        };
+
+        new_page_combo {
+            bindings = <&kp LC(M)>;
+            key-positions = <22 30>; // Z(22) と M(30)
+        };
     };
 
     macros {
@@ -289,10 +364,10 @@
 
         Basic {
             bindings = <
-&kp Q             &kp W         &kp E              &kp R          &kp T                                                            &kp Y         &kp U      &kp I           &kp O    &lt_retro 5 P
+&kp Q             &kp W         &kp E              &kp R          &kp T                                                            &kp Y         &kp U      &kp I           &kp O    &kp P
 &mt LEFT_SHIFT A  &kp S         &kp D              &kp SPACE      &mt LCTRL G  &kp LEFT_ALT                &kp TAB                 &mt LSHIFT H  &kp ENTER  &lt_scroll 4 K  &kp L    &lt_retro 6 LEFT_BRACKET
 &mt LCTRL Z       &kp X         &kp C              &kp V          &kp B        &kp F                       &lt_retro 7 J           &kp N         &kp M      &kp COMMA       &kp DOT  &lt_retro 7 RIGHT_BRACKET
-&kp LS(F5)        &kp LEFT_WIN  &lt_retro 3 LCTRL  &kp BACKSPACE  &mkp MB1     &lt_retro 2 LANGUAGE_2      &lt_retro 1 LANGUAGE_1  &mkp MB2                                          &kp LS(LG(S))
+&kp LS(F5)        &kp LEFT_WIN  &lt_retro 3 LCTRL  &kp BACKSPACE  &mkp MB1     &lt_retro 2 LANGUAGE_2      &lt_retro 1 LANGUAGE_1  &mkp MB2                                          &lt_retro 5 LS(LG(S))
             >;
         };
 
