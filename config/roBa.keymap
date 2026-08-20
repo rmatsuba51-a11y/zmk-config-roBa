@@ -364,10 +364,18 @@
 
         Basic {
             bindings = <
-&kp Q             &kp W         &kp E              &kp R          &kp T                                                            &kp Y         &kp U      &kp I           &kp O    &kp P
-&mt LEFT_SHIFT A  &kp S         &kp D              &kp SPACE      &mt LCTRL G  &kp LEFT_ALT                &kp TAB                 &mt LSHIFT H  &kp ENTER  &lt_scroll 4 K  &kp L    &lt_retro 6 LEFT_BRACKET
-&mt LCTRL Z       &kp X         &kp C              &kp V          &kp B        &kp F                       &lt_retro 7 J           &kp N         &kp M      &kp COMMA       &kp DOT  &lt_retro 7 RIGHT_BRACKET
-&kp LS(F5)        &kp LEFT_WIN  &lt_retro 3 LCTRL  &kp BACKSPACE  &mkp MB1     &lt_retro 2 LANGUAGE_2      &lt_retro 1 LANGUAGE_1  &mkp MB2                                          &lt_retro 5 LS(LG(S))
+// ==========================================================
+// ★変更内容（Basicレイヤー）
+// 1. AとHのShiftを外し、純粋なキーに変更 (AとHが打てるように)
+// 2. 左人差し指を MB1 (左クリック) に変更
+// 3. 右人差し指を MB2 (右クリック) に変更
+// 4. 左親指を SPACE 兼 LCTRL に変更
+// 5. 右親指を ENTER 兼 LSHIFT に変更
+// ==========================================================
+&kp Q       &kp W         &kp E              &kp R          &kp T                                                                 &kp Y         &kp U      &kp I           &kp O    &kp P
+&kp A       &kp S         &kp D              &mkp MB1       &mt LCTRL G       &kp LEFT_ALT                &kp TAB                 &kp H         &mkp MB2   &lt_scroll 4 K  &kp L    &lt_retro 6 LEFT_BRACKET
+&mt LCTRL Z &kp X         &kp C              &kp V          &kp B             &kp F                       &lt_retro 7 J           &kp N         &kp M      &kp COMMA       &kp DOT  &lt_retro 7 RIGHT_BRACKET
+&kp LS(F5)  &kp LEFT_WIN  &lt_retro 3 LCTRL  &kp BACKSPACE  &mt LCTRL SPACE   &lt_retro 2 LANGUAGE_2      &lt_retro 1 LANGUAGE_1  &mt LSHIFT ENTER                                  &lt_retro 5 LS(LG(S))
             >;
         };
 
