@@ -370,17 +370,17 @@
             bindings = <
 &kp Q       &kp W         &kp E      &kp R               &kp T                                                                     &kp Y                   &kp U     &kp I           &kp O    &kp P
 &kp A       &kp S         &kp D      &mkp MB1            &kp G                 &kp LEFT_ALT                &kp TAB                 &kp H                   &mkp MB2  &lt_scroll 4 K  &kp L    &lt_retro 6 LEFT_BRACKET
-&kp Z       &kp X         &kp C      &kp V               &kp B                 &kp F                       &lt_retro 7 J           &kp N                   &kp M     &kp COMMA       &kp DOT  &lt_retro 7 RIGHT_BRACKET
+&kp Z       &kp X         &kp C      &kp V               &kp B                 &kp F                       &kp J                   &kp N                   &kp M     &kp COMMA       &kp DOT  &lt_retro 7 RIGHT_BRACKET
 &kp LS(F5)  &kp LEFT_WIN  &kp LCTRL  &lt_bs 3 BACKSPACE  &mt LEFT_SHIFT SPACE  &lt_retro 2 LANGUAGE_2      &lt_retro 1 LANGUAGE_1  &mt LEFT_CONTROL ENTER                                     &lt_retro 5 LS(LG(S))
             >;
         };
 
         FUNCTION {
             bindings = <
-&kp NUMBER_1        &kp NUMBER_2         &kp NUMBER_3  &kp NUMBER_4  &kp N5                                         &kp NUMBER_6              &kp N7   &kp N8           &kp N9     &kp N0
-&kp LEFT_SHIFT      &kp INTERNATIONAL_3  &kp EQUAL     &kp MINUS     &mt LCTRL QUESTION  &kp LEFT_ALT      &kp TAB  &mt LEFT_SHIFT SEMICOLON  &kp SQT  &kp NON_US_HASH  &kp SLASH  &lt_retro 8 INTERNATIONAL_1
-&kp LS(Z)           &kp F2               &kp F3        &kp F4        &kp F5              &kp F6            &kp F7   &kp F8                    &kp F9   &kp F10          &kp F11    &lt_retro 9 F12
-&kp LA(LC(DELETE))  &kp F1               &kp LCTRL     &kp LC(Z)     &trans              &kp LC(Y)         &trans   &trans                                                         &kp LC(LS(SEMI))
+&kp NUMBER_1        &kp NUMBER_2         &kp NUMBER_3  &kp NUMBER_4  &kp N5                               &kp NUMBER_6   &kp N7   &kp N8           &kp N9     &kp N0
+&trans              &kp INTERNATIONAL_3  &kp EQUAL     &kp MINUS     &kp QUESTION  &trans         &trans  &kp SEMICOLON  &kp SQT  &kp NON_US_HASH  &kp SLASH  &lt_retro 8 INTERNATIONAL_1
+&kp F1              &kp F2               &kp F3        &kp F4        &kp F5        &kp F6         &kp F7  &kp F8         &kp F9   &kp F10          &kp F11    &lt_retro 9 F12
+&kp LA(LC(DELETE))  &trans               &kp LCTRL     &kp LC(Z)     &trans        &kp LC(Y)      &trans  &trans                                              &kp LC(LS(SEMI))
             >;
         };
 
