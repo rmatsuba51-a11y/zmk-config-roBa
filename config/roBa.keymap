@@ -10,7 +10,7 @@
 &trackball { scroll-layers = <4>; };
 
 // ==========================================================
-// グローバル設定の最適化（全体的なタイピング品質の向上）
+// グローバル設定の最適化
 // ==========================================================
 
 &mt {
@@ -58,79 +58,74 @@
             key-positions = <24 25>;
         };
 
-        // ==========================================================
-        // 【修正】Ctrl ショートカットコンボ
-        // すべて「Zキー(22) ＋ 対象の文字キー」の同時押しに設定しています
-        // ==========================================================
-
         copy_combo {
             bindings = <&kp LC(C)>;
-            key-positions = <22 24>; // Z(22) と C(24)
+            key-positions = <22 24>; 
         };
 
         paste_combo {
             bindings = <&kp LC(V)>;
-            key-positions = <22 25>; // Z(22) と V(25)
+            key-positions = <22 25>; 
         };
 
         cut_combo {
             bindings = <&kp LC(X)>;
-            key-positions = <22 23>; // Z(22) と X(23)
+            key-positions = <22 23>; 
         };
 
         select_all_combo {
             bindings = <&kp LC(A)>;
-            key-positions = <10 22>; // Z(22) と A(10)
+            key-positions = <10 22>; 
         };
 
         save_combo {
             bindings = <&kp LC(S)>;
-            key-positions = <11 22>; // Z(22) と S(11)
+            key-positions = <11 22>; 
         };
 
         search_combo {
             bindings = <&kp LC(F)>;
-            key-positions = <22 27>; // Z(22) と F(27)
+            key-positions = <22 27>; 
         };
 
         replace_combo {
             bindings = <&kp LC(H)>;
-            key-positions = <17 22>; // Z(22) と H(17)
+            key-positions = <17 22>; 
         };
 
         print_combo {
             bindings = <&kp LC(P)>;
-            key-positions = <9 22>;  // Z(22) と P(9)
+            key-positions = <9 22>;  
         };
 
         bold_combo {
             bindings = <&kp LC(B)>;
-            key-positions = <22 26>; // Z(22) と B(26)
+            key-positions = <22 26>; 
         };
 
         italic_combo {
             bindings = <&kp LC(I)>;
-            key-positions = <7 22>;  // Z(22) と I(7)
+            key-positions = <7 22>;  
         };
 
         underline_combo {
             bindings = <&kp LC(U)>;
-            key-positions = <6 22>;  // Z(22) と U(6)
+            key-positions = <6 22>;  
         };
 
         close_tab_combo {
             bindings = <&kp LC(W)>;
-            key-positions = <1 22>;  // Z(22) と W(1)
+            key-positions = <1 22>;  
         };
 
         new_window_combo {
             bindings = <&kp LC(N)>;
-            key-positions = <22 29>; // Z(22) と N(29)
+            key-positions = <22 29>; 
         };
 
         new_page_combo {
             bindings = <&kp LC(M)>;
-            key-positions = <22 30>; // Z(22) と M(30)
+            key-positions = <22 30>; 
         };
     };
 
@@ -319,13 +314,23 @@
     };
 
     behaviors {
+        // ★バックスペース専用設定：Spaceキーの&mtと同じリズムで連続入力が可能
+        lt_bs: lt_bs {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_BACKSPACE";
+            bindings = <&mo>, <&kp>;
+            #binding-cells = <2>;
+            tapping-term-ms = <200>; 
+            quick-tap-ms = <175>;    
+            retro-tap;
+            flavor = "balanced";
+        };
+
         lt_scroll: lt_scroll {
             compatible = "zmk,behavior-hold-tap";
             label = "LT_SCROLL";
             bindings = <&mo>, <&kp>;
             #binding-cells = <2>;
-            
-            // ★短縮してレスポンスを向上
             tapping-term-ms = <100>;
             quick-tap-ms = <120>;
             flavor = "hold-preferred";
@@ -336,8 +341,6 @@
             label = "LAYER_TAP_TO_0";
             bindings = <&mo>, <&to_layer_0>;
             #binding-cells = <2>;
-            
-            // ★短縮してレスポンスを向上
             tapping-term-ms = <100>;
             quick-tap-ms = <120>;
             flavor = "balanced";
@@ -348,12 +351,8 @@
             label = "LT_RETRO";
             bindings = <&mo>, <&kp>;
             #binding-cells = <2>;
-            
-            // ★200msから140msへ大幅短縮。「もたつき」と「゛か 問題」を同時に消し去ります。
             tapping-term-ms = <100>;
-            // ★tapping-termに合わせてこちらも短縮します。
             quick-tap-ms = <120>;
-            
             retro-tap;
             flavor = "balanced";
         };
@@ -365,15 +364,15 @@
         Basic {
             bindings = <
 // ==========================================================
-// ★変更内容（Basicレイヤー）
-// 1. GとZのLCTRL修飾を削除し、純粋なkpに変更
-// 2. 左親指のLCTRL(L3切り替え)を純粋なLCTRLに変更
-// 3. 左親指のBACKSPACEをlt_retro 3 (長押しでLayer3)に変更
+// ★変更内容
+// 1. GとZの長押しCtrlを削除
+// 2. 左親指のLayer3切り替えをBackspaceへ移動
+// 3. BackspaceをSpaceキーと同じ設定で連続入力可能に
 // ==========================================================
 &kp Q       &kp W         &kp E              &kp R          &kp T                                                                 &kp Y         &kp U      &kp I           &kp O    &kp P
 &kp A       &kp S         &kp D              &mkp MB1       &kp G             &kp LEFT_ALT                &kp TAB                 &kp H         &mkp MB2   &lt_scroll 4 K  &kp L    &lt_retro 6 LEFT_BRACKET
 &kp Z       &kp X         &kp C              &kp V          &kp B             &kp F                       &lt_retro 7 J           &kp N         &kp M      &kp COMMA       &kp DOT  &lt_retro 7 RIGHT_BRACKET
-&kp LS(F5)  &kp LEFT_WIN  &kp LCTRL          &lt_retro 3 BACKSPACE  &mt LCTRL SPACE   &lt_retro 2 LANGUAGE_2      &lt_retro 1 LANGUAGE_1  &mt LSHIFT ENTER                                  &lt_retro 5 LS(LG(S))
+&kp LS(F5)  &kp LEFT_WIN  &kp LCTRL          &lt_bs 3 BACKSPACE  &mt LCTRL SPACE   &lt_retro 2 LANGUAGE_2      &lt_retro 1 LANGUAGE_1  &mt LSHIFT ENTER                                  &lt_retro 5 LS(LG(S))
             >;
         };
 
