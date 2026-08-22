@@ -307,7 +307,7 @@
 
         di_macro: di_macro {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <1>;
+            #binding-cells = <0>;
             bindings = <&kp A &kp LEFT_BRACKET>;
             label = "DI_MACRO";
         };
