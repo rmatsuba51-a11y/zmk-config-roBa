@@ -441,7 +441,7 @@
         layer_8 {
             bindings = <
 &trans  &bu_macro  &trans     &trans     &trans                      &trans  &trans     &trans  &trans  &trans
-&trans  &trans     &be_macro  &bo_macro  &trans  &trans      &trans  &trans  &ge_macro  &trans  &trans  &trans
+&trans  &be_macro  &bo_macro  &trans     &trans  &trans      &trans  &trans  &ge_macro  &trans  &trans  &trans
 &trans  &trans     &trans     &trans     &trans  &trans      &trans  &trans  &trans     &trans  &trans  &trans
 &trans  &trans     &trans     &trans     &trans  &trans      &trans  &trans                             &trans
             >;
