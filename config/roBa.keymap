@@ -450,7 +450,7 @@
         layer_9 {
             bindings = <
 &trans  &pu_macro  &trans     &trans     &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &pe_macro  &po_macro  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &pe_macro  &po_macro  &trans     &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans     &trans     &trans     &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans     &trans     &trans     &trans  &trans      &trans  &trans                          &trans
             >;
