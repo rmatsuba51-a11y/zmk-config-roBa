@@ -15,7 +15,8 @@
 / {
     combos {
         compatible = "zmk,combos";
-        timeout-ms = <80>; // 3キー同時押しの判定を安定させるため少し延長
+        // 3キー同時押しの判定を安定させるため、もし発動しにくい場合はここを 100 や 120 に増やしてみてください
+        timeout-ms = <80>; 
 
         // --- システム・編集系 ---
         tab { bindings = <&kp TAB>; key-positions = <11 12>; };
@@ -51,8 +52,8 @@
         c_be { key-positions = <11 41 21>; bindings = <&be_macro>; }; // へ(S+L1) + @
         c_ze { key-positions = <9 41 21>;  bindings = <&ze_macro>; }; // せ(P+L1) + @
         
-        // 【修正】「げ」のコンボ：右親指L1(41) + Enter(18) + @(21)
-        c_ge { key-positions = <18 41 21>; bindings = <&ge_macro>; }; // げ(Enter+L1) + @
+        // 【修正】「げ」のコンボ：Enter(18) + 右親指L1(41) + @(21)
+        c_ge { key-positions = <18 41 21>; bindings = <&ge_macro>; };
         
         c_pu { key-positions = <1 41 33>;  bindings = <&pu_macro>; }; // ふ(W+L1) + [
         c_po { key-positions = <12 41 33>; bindings = <&po_macro>; }; // ほ(D+L1) + [
@@ -75,7 +76,6 @@
         c_wa { key-positions = <9 41>;  bindings = <&kp N0>; };    // わ (P+L1)
         c_cho { key-positions = <10 41>; bindings = <&kp INT3>; }; // ー (A+L1)
         
-        // 【追加】「ろ」のコンボ：右親指L1(41) + @(21)
         c_ro { key-positions = <21 41>;  bindings = <&kp INTERNATIONAL_1>; }; // ろ (@+L1)
 
         // ==========================================================
@@ -85,7 +85,6 @@
         c_s_i  { key-positions = <2 38>;  bindings = <&kp LS(E)>; };  // ぃ (E+左Shift)
         c_s_tu { key-positions = <22 38>; bindings = <&kp LS(Z)>; };  // っ (Z+左Shift)
         
-        // 【追加】「、」「。」のコンボ：左親指Shift(38) + ,(31) / .(32)
         c_ten  { key-positions = <31 38>; bindings = <&kp LS(COMMA)>; }; // 、 (,+左Shift)
         c_maru { key-positions = <32 38>; bindings = <&kp LS(DOT)>; };   // 。 (.+左Shift)
 
@@ -115,7 +114,10 @@
         zu_macro: zu_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp R &kp LEFT_BRACKET>; label = "ZU_MACRO"; };
         de_macro: de_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp W &kp LEFT_BRACKET>; label = "DE_MACRO"; };
         du_macro: du_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp Z &kp LEFT_BRACKET>; label = "DU_MACRO"; };
-        ge_macro: ge_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp K &kp LEFT_BRACKET>; label = "GE_MACRO"; };
+        
+        // 【修正】「げ」の出力を K から SQT に変更（JISかな入力の「け」に対応）
+        ge_macro: ge_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp SQT &kp LEFT_BRACKET>; label = "GE_MACRO"; };
+        
         ze_macro: ze_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp P &kp LEFT_BRACKET>; label = "ZE_MACRO"; };
         be_macro: be_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp EQUAL &kp LEFT_BRACKET>; label = "BE_MACRO"; };
         bo_macro: bo_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp MINUS &kp LEFT_BRACKET>; label = "BO_MACRO"; };
@@ -141,7 +143,8 @@
         Basic {
             bindings = <
 &kp Q       &kp W         &kp E      &kp R               &kp T                                                                   &kp Y                   &kp U      &kp I           &kp O    &kp P
-&kp A       &kp S         &kp D      &mkp MB1            &kp G                 &kp LEFT_ALT                &kp LA(TAB)           &kp H                   &kp ENTER  &lt_scroll 4 K  &kp L    &lt_retro 6 LEFT_BRACKET
+// 【修正】左端の A を &mt LEFT_SHIFT A に変更
+&mt LEFT_SHIFT A  &kp S   &kp D      &mkp MB1            &kp G                 &kp LEFT_ALT                &kp LA(TAB)           &kp H                   &kp ENTER  &lt_scroll 4 K  &kp L    &lt_retro 6 LEFT_BRACKET
 &kp Z       &kp X         &kp C      &kp V               &kp B                 &kp F                       &kp J                 &kp N                   &kp M      &kp COMMA       &kp DOT  &lt_retro 7 RIGHT_BRACKET
 &kp LS(F5)  &kp LEFT_WIN  &kp LCTRL  &lt_bs 3 BACKSPACE  &mt LEFT_SHIFT SPACE  &lt_retro 2 LANGUAGE_2      &mt LEFT_CONTROL TAB  &lt_retro 1 LANGUAGE_1                                      &lt_retro 5 LS(LG(S))
             >;
