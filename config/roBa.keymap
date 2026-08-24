@@ -49,8 +49,10 @@
         c_bu { key-positions = <1 41 21>;  bindings = <&bu_macro>; }; // ふ(W+L1) + @
         c_bo { key-positions = <12 41 21>; bindings = <&bo_macro>; }; // ほ(D+L1) + @
         c_be { key-positions = <11 41 21>; bindings = <&be_macro>; }; // へ(S+L1) + @
-        c_ge { key-positions = <19 41 21>; bindings = <&ge_macro>; }; // け(K+L1) + @
         c_ze { key-positions = <9 41 21>;  bindings = <&ze_macro>; }; // せ(P+L1) + @
+        
+        // 【修正】「げ」のコンボ：右親指L1(41) + Enter(18) + @(21)
+        c_ge { key-positions = <18 41 21>; bindings = <&ge_macro>; }; // げ(Enter+L1) + @
         
         c_pu { key-positions = <1 41 33>;  bindings = <&pu_macro>; }; // ふ(W+L1) + [
         c_po { key-positions = <12 41 33>; bindings = <&po_macro>; }; // ほ(D+L1) + [
@@ -72,13 +74,20 @@
         c_yo { key-positions = <8 41>;  bindings = <&kp N9>; };    // よ (O+L1)
         c_wa { key-positions = <9 41>;  bindings = <&kp N0>; };    // わ (P+L1)
         c_cho { key-positions = <10 41>; bindings = <&kp INT3>; }; // ー (A+L1)
+        
+        // 【追加】「ろ」のコンボ：右親指L1(41) + @(21)
+        c_ro { key-positions = <21 41>;  bindings = <&kp INTERNATIONAL_1>; }; // ろ (@+L1)
 
         // ==========================================================
-        // 小書き文字コンボ (左親指Shift:38)
+        // 小書き文字・句読点コンボ (左親指Shift:38)
         // ==========================================================
         // 2キー：ベースがL0にあるもの
         c_s_i  { key-positions = <2 38>;  bindings = <&kp LS(E)>; };  // ぃ (E+左Shift)
         c_s_tu { key-positions = <22 38>; bindings = <&kp LS(Z)>; };  // っ (Z+左Shift)
+        
+        // 【追加】「、」「。」のコンボ：左親指Shift(38) + ,(31) / .(32)
+        c_ten  { key-positions = <31 38>; bindings = <&kp LS(COMMA)>; }; // 、 (,+左Shift)
+        c_maru { key-positions = <32 38>; bindings = <&kp LS(DOT)>; };   // 。 (.+左Shift)
 
         // 3キー：ベースがL1にあるもの (文字 + Shift + L1)
         c_s_a  { key-positions = <2 38 41>;  bindings = <&kp LS(N3)>; }; // ぁ (E+Shift+L1)
@@ -139,7 +148,7 @@
         };
 
         FUNCTION { bindings = <&kp NUMBER_1 &kp NUMBER_2 &kp NUMBER_3 &kp NUMBER_4 &kp N5 &kp NUMBER_6 &kp N7 &kp N8 &kp N9 &kp N0 &kp INT3 &kp EQUAL &kp MINUS &mkp MB2 &kp QUESTION &trans &trans &kp SEMICOLON &kp SQT &kp NON_US_HASH &kp SLASH &lt_retro 8 INTERNATIONAL_1 &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &lt_retro 9 F12 &kp LA(LC(DELETE)) &trans &trans &kp DELETE &trans &trans &trans &trans &kp LC(LS(SEMI))>; };
-        ARROW { bindings = <&kp ESCAPE &trans &trans &trans &trans &kp C_BRI_UP &kp PAGE_UP &kp UP_ARROW &kp PAGE_DOWN &kp C_VOLUME_UP &kp LEFT_SHIFT &kp LG(C_AC_BACK) &trans &kp C_AC_FORWARD &trans &mt LCTRL LEFT_ALT &mt LEFT_SHIFT TAB &kp C_BRI_DN &kp LEFT &trans &kp RIGHT &kp C_VOLUME_DOWN &kp LCTRL &trans &trans &trans &trans &trans &trans &trans &kp HOME &kp DOWN &kp END &kp C_MUTE &kp LG(UP_ARROW) &kp LG(LEFT) &kp LG(RIGHT) &trans &trans &trans &trans &trans &trans>; };
+        ARROW { bindings = <&kp ESCAPE &trans &trans &trans &trans &kp C_BRI_UP &kp PAGE_UP &kp UP_ARROW &kp PAGE_DOWN &kp C_VOLUME_UP &kp LEFT_SHIFT &kp LG(C_AC_BACK) &trans &kp C_AC_FORWARD &trans &mt LCTRL LEFT_ALT &mt LEFT_SHIFT TAB &kp C_BRI_DN &kp LEFT &trans &kp RIGHT &kp C_VOLUME_DOWN &kp LCTRL &trans &trans &trans &trans &trans &trans &trans &trans &kp HOME &kp DOWN &kp END &kp C_MUTE &kp LG(UP_ARROW) &kp LG(LEFT) &kp LG(RIGHT) &trans &trans &trans &trans &trans &trans>; };
         layer_3 { bindings = <&trans &trans &trans &trans &trans &kp LS(MINUS) &kp NUMBER_1 &kp NUMBER_2 &kp NUMBER_3 &kp NUMBER_0 &trans &trans &trans &trans &trans &trans &kp KP_ASTERISK &kp KP_PLUS &kp NUMBER_4 &kp NUMBER_5 &kp NUMBER_6 &kp KP_DOT &trans &trans &trans &trans &trans &trans &kp KP_SLASH &kp KP_MINUS &kp NUMBER_7 &kp NUMBER_8 &kp N9 &kp INT3 &trans &trans &trans &trans &trans &trans &trans &trans &trans>; };
         SCROLL { bindings = <&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans>; };
         layer_5 { bindings = <&trans &trans &trans &trans &trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &trans &trans &trans &trans &trans &trans &trans &trans &bt BT_SEL 4 &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &bt BT_CLR &bt BT_CLR_ALL &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans>; };
