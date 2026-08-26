@@ -52,7 +52,7 @@
         c_be { key-positions = <11 41 21>; bindings = <&be_macro>; }; // へ(S+L1) + @
         c_ze { key-positions = <9 41 21>;  bindings = <&ze_macro>; }; // せ(P+L1) + @
         
-        // 【修正】「げ」のコンボ：Enter(18) + 右親指L1(41) + @(21)
+        // 「げ」のコンボ：Enter(18) + 右親指L1(41) + @(21)
         c_ge { key-positions = <18 41 21>; bindings = <&ge_macro>; };
         
         c_pu { key-positions = <1 41 33>;  bindings = <&pu_macro>; }; // ふ(W+L1) + [
@@ -101,7 +101,6 @@
 
     macros {
         to_layer_0: to_layer_0 { compatible = "zmk,behavior-macro-one-param"; #binding-cells = <1>; bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>; label = "TO_LAYER_0"; };
-        // 濁音マクロ
         ga_macro: ga_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp T &kp LEFT_BRACKET>; label = "GA_MACRO"; };
         da_macro: da_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp Q &kp LEFT_BRACKET>; label = "DA_MACRO"; };
         za_macro: za_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp X &kp LEFT_BRACKET>; label = "ZA_MACRO"; };
@@ -114,10 +113,7 @@
         zu_macro: zu_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp R &kp LEFT_BRACKET>; label = "ZU_MACRO"; };
         de_macro: de_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp W &kp LEFT_BRACKET>; label = "DE_MACRO"; };
         du_macro: du_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp Z &kp LEFT_BRACKET>; label = "DU_MACRO"; };
-        
-        // 【修正】「げ」の出力を K から SQT に変更（JISかな入力の「け」に対応）
         ge_macro: ge_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp SQT &kp LEFT_BRACKET>; label = "GE_MACRO"; };
-        
         ze_macro: ze_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp P &kp LEFT_BRACKET>; label = "ZE_MACRO"; };
         be_macro: be_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp EQUAL &kp LEFT_BRACKET>; label = "BE_MACRO"; };
         bo_macro: bo_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp MINUS &kp LEFT_BRACKET>; label = "BO_MACRO"; };
@@ -140,18 +136,37 @@
 
     keymap {
         compatible = "zmk,keymap";
+        
         Basic {
             bindings = <
-&kp Q       &kp W         &kp E      &kp R               &kp T                                                                   &kp Y                   &kp U      &kp I           &kp O    &kp P
-// 【修正】左端の A を &mt LEFT_SHIFT A に変更
-&mt LEFT_SHIFT A  &kp S   &kp D      &mkp MB1            &kp G                 &kp LEFT_ALT                &kp LA(TAB)           &kp H                   &kp ENTER  &lt_scroll 4 K  &kp L    &lt_retro 6 LEFT_BRACKET
-&kp Z       &kp X         &kp C      &kp V               &kp B                 &kp F                       &kp J                 &kp N                   &kp M      &kp COMMA       &kp DOT  &lt_retro 7 RIGHT_BRACKET
-&kp LS(F5)  &kp LEFT_WIN  &kp LCTRL  &lt_bs 3 BACKSPACE  &mt LEFT_SHIFT SPACE  &lt_retro 2 LANGUAGE_2      &mt LEFT_CONTROL TAB  &lt_retro 1 LANGUAGE_1                                      &lt_retro 5 LS(LG(S))
+&kp Q             &kp W         &kp E      &kp R               &kp T                                                                   &kp Y                   &kp U      &kp I           &kp O    &kp P
+&mt LEFT_SHIFT A  &kp S         &kp D      &mkp MB1            &kp G                 &kp LEFT_ALT                &kp LA(TAB)           &kp H                   &kp ENTER  &lt_scroll 4 K  &kp L    &lt_retro 6 LEFT_BRACKET
+&kp Z             &kp X         &kp C      &kp V               &kp B                 &kp F                       &kp J                 &kp N                   &kp M      &kp COMMA       &kp DOT  &lt_retro 7 RIGHT_BRACKET
+&kp LS(F5)        &kp LEFT_WIN  &kp LCTRL  &lt_bs 3 BACKSPACE  &mt LEFT_SHIFT SPACE  &lt_retro 2 LANGUAGE_2      &mt LEFT_CONTROL TAB  &lt_retro 1 LANGUAGE_1                                      &lt_retro 5 LS(LG(S))
             >;
         };
 
-        FUNCTION { bindings = <&kp NUMBER_1 &kp NUMBER_2 &kp NUMBER_3 &kp NUMBER_4 &kp N5 &kp NUMBER_6 &kp N7 &kp N8 &kp N9 &kp N0 &kp INT3 &kp EQUAL &kp MINUS &mkp MB2 &kp QUESTION &trans &trans &kp SEMICOLON &kp SQT &kp NON_US_HASH &kp SLASH &lt_retro 8 INTERNATIONAL_1 &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &lt_retro 9 F12 &kp LA(LC(DELETE)) &trans &trans &kp DELETE &trans &trans &trans &trans &kp LC(LS(SEMI))>; };
-        ARROW { bindings = <&kp ESCAPE &trans &trans &trans &trans &kp C_BRI_UP &kp PAGE_UP &kp UP_ARROW &kp PAGE_DOWN &kp C_VOLUME_UP &kp LEFT_SHIFT &kp LG(C_AC_BACK) &trans &kp C_AC_FORWARD &trans &mt LCTRL LEFT_ALT &mt LEFT_SHIFT TAB &kp C_BRI_DN &kp LEFT &trans &kp RIGHT &kp C_VOLUME_DOWN &kp LCTRL &trans &trans &trans &trans &trans &trans &trans &trans &kp HOME &kp DOWN &kp END &kp C_MUTE &kp LG(UP_ARROW) &kp LG(LEFT) &kp LG(RIGHT) &trans &trans &trans &trans &trans &trans>; };
+        FUNCTION { 
+            bindings = <
+&kp NUMBER_1 &kp NUMBER_2 &kp NUMBER_3 &kp NUMBER_4 &kp N5       &kp NUMBER_6 &kp N7 &kp N8 &kp N9 &kp N0 
+&kp INT3     &kp EQUAL    &kp MINUS    &mkp MB2     &kp QUESTION &trans       &trans &kp SEMICOLON &kp SQT &kp NON_US_HASH &kp SLASH &lt_retro 8 INTERNATIONAL_1 
+&kp F1       &kp F2       &kp F3       &kp F4       &kp F5       &kp F6       &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &lt_retro 9 F12 
+&kp LA(LC(DELETE)) &trans &trans       &kp DELETE   &trans       &trans       &trans &trans                               &kp LC(LS(SEMI))
+            >; 
+        };
+        
+        // ==========================================================
+        // 【修正済】矢印レイヤー (43キーに変更、I=上, ENTER=左, L=右, COMMA=下)
+        // ==========================================================
+        ARROW { 
+            bindings = <
+&kp ESCAPE      &trans            &trans     &trans              &trans                &kp C_BRI_UP                &kp PAGE_UP           &kp UP_ARROW            &kp PAGE_DOWN  &kp C_VOLUME_UP 
+&kp LEFT_SHIFT  &kp LG(C_AC_BACK) &trans     &kp C_AC_FORWARD    &trans                &mt LCTRL LEFT_ALT          &mt LEFT_SHIFT TAB    &kp C_BRI_DN            &kp LEFT       &trans          &kp RIGHT &kp C_VOLUME_DOWN 
+&kp LCTRL       &trans            &trans     &trans              &trans                &trans                      &trans                &trans                  &trans         &kp DOWN        &kp HOME  &kp END 
+&kp C_MUTE      &kp LG(UP_ARROW)  &kp LG(LEFT) &kp LG(RIGHT)      &trans                &trans                      &trans                &trans                                                 &trans
+            >; 
+        };
+        
         layer_3 { bindings = <&trans &trans &trans &trans &trans &kp LS(MINUS) &kp NUMBER_1 &kp NUMBER_2 &kp NUMBER_3 &kp NUMBER_0 &trans &trans &trans &trans &trans &trans &kp KP_ASTERISK &kp KP_PLUS &kp NUMBER_4 &kp NUMBER_5 &kp NUMBER_6 &kp KP_DOT &trans &trans &trans &trans &trans &trans &kp KP_SLASH &kp KP_MINUS &kp NUMBER_7 &kp NUMBER_8 &kp N9 &kp INT3 &trans &trans &trans &trans &trans &trans &trans &trans &trans>; };
         SCROLL { bindings = <&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans>; };
         layer_5 { bindings = <&trans &trans &trans &trans &trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &trans &trans &trans &trans &trans &trans &trans &trans &bt BT_SEL 4 &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &bt BT_CLR &bt BT_CLR_ALL &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans>; };
