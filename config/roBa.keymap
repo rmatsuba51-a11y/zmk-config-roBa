@@ -78,6 +78,11 @@
         
         c_ro { key-positions = <21 41>;  bindings = <&kp INTERNATIONAL_1>; }; // ろ (@+L1)
 
+        c_re { key-positions = <17 41>;  bindings = <&kp SEMICOLON>; };   // れ (H+L1)
+        c_ke { key-positions = <18 41>;  bindings = <&kp SQT>; };         // け (Enter+L1)
+        c_mu { key-positions = <19 41>;  bindings = <&kp NON_US_HASH>; }; // む (K+L1)
+        c_me { key-positions = <20 41>;  bindings = <&kp SLASH>; };       // め (L+L1)
+
         // ==========================================================
         // 小書き文字・句読点コンボ (左親指Shift:38)
         // ==========================================================
