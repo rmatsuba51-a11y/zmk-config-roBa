@@ -39,12 +39,17 @@
         c_do { key-positions = <11 21>; bindings = <&do_macro>; }; // と(S)
         c_zi { key-positions = <12 21>; bindings = <&zi_macro>; }; // し(D)
         c_gi { key-positions = <14 21>; bindings = <&gi_macro>; }; // き(G)
+        c_gu { key-positions = <17 21>; bindings = <&gu_macro>; }; // ぐ(H)
         c_du { key-positions = <22 21>; bindings = <&du_macro>; }; // つ(Z)
         c_za { key-positions = <23 21>; bindings = <&za_macro>; }; // さ(X)
         c_zo { key-positions = <24 21>; bindings = <&zo_macro>; }; // そ(C)
         c_bi { key-positions = <25 21>; bindings = <&bi_macro>; }; // ひ(V)
         c_go { key-positions = <26 21>; bindings = <&go_macro>; }; // こ(B)
         c_ba { key-positions = <27 21>; bindings = <&ba_macro>; }; // は(F)
+
+        // L0の半濁音 (2キー)
+        c_pa { key-positions = <27 33>; bindings = <&pa_macro>; }; // ぱ(F) + [
+        c_pi { key-positions = <25 33>; bindings = <&pi_macro>; }; // ぴ(V) + [
 
         // L1の濁音・半濁音 (3キー: 文字+L1+濁点)
         c_bu { key-positions = <1 41 21>;  bindings = <&bu_macro>; }; // ふ(W+L1) + @
