@@ -567,7 +567,7 @@
 &kp ESCAPE      &trans             &trans         &trans            &trans                                              &kp C_BRI_UP  &kp PAGE_UP  &kp UP_ARROW  &kp PAGE_DOWN  &kp C_VOLUME_UP
 &kp LEFT_SHIFT  &kp LG(C_AC_BACK)  &trans         &kp C_AC_FORWARD  &trans  &mt LCTRL LEFT_ALT      &mt LEFT_SHIFT TAB  &kp C_BRI_DN  &kp LEFT     &trans        &kp RIGHT      &kp C_VOLUME_DOWN
 &kp LCTRL       &kp LG(UP_ARROW)   &trans         &trans            &trans  &trans                  &trans              &trans        &trans       &kp DOWN      &kp HOME       &kp C_MUTE
-&kp LG(LEFT)    &kp LG(DOWN)       &kp LG(RIGHT)  &trans            &trans  &trans                  &m_paren_sp         &trans                                                  &m_bracket_jp
+&kp LG(LEFT)    &kp LG(DOWN)       &kp LG(RIGHT)  &trans            &trans  &trans                  &m_paren_sp         &m_bracket_jp                            &trans
             >;
         };
 
