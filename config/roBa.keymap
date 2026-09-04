@@ -489,31 +489,32 @@
             label = "PO_MACRO";
         };
 
+        // --- 修正箇所：LANG2 → 記号入力 → カーソル移動 → LANG1 ---
         m_paren_sp: m_paren_sp {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp SPACE &kp LS(N8) &kp LS(N9) &kp SPACE &kp LEFT &kp LEFT>;
+            bindings = <&kp LANGUAGE_2 &kp SPACE &kp LS(N8) &kp LS(N9) &kp SPACE &kp LEFT &kp LEFT &kp LANGUAGE_1>;
             label = "M_PAREN_SP";
         };
 
         m_bracket_jp: m_bracket_jp {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LBKT &kp RBKT &kp LEFT>;
+            bindings = <&kp LANGUAGE_2 &kp RBKT &kp NON_US_HASH &kp LEFT &kp LANGUAGE_1>;
             label = "M_BRACKET_JP";
         };
 
         m_dquote: m_dquote {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp DQT &kp DQT &kp LEFT>;
+            bindings = <&kp LANGUAGE_2 &kp LS(N2) &kp LS(N2) &kp LEFT &kp LANGUAGE_1>;
             label = "M_DQUOTE";
         };
 
         m_squote: m_squote {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp SQT &kp SQT &kp LEFT>;
+            bindings = <&kp LANGUAGE_2 &kp LS(N7) &kp LS(N7) &kp LEFT &kp LANGUAGE_1>;
             label = "M_SQUOTE";
         };
     };
