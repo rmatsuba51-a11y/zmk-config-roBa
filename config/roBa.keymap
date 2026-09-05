@@ -28,537 +28,265 @@
 / {
     combos {
         compatible = "zmk,combos";
-
-        // 3キー同時押しの判定を安定させるため、もし発動しにくい場合はここを 100 や 120 に増やしてみてください
-
         timeout-ms = <80>;
 
-        // --- システム・編集系 ---
+        // --- システム・編集系 (既存) ---
+        tab { bindings = <&kp TAB>; key-positions = <11 12>; };
+        muhennkann { bindings = <&to_layer_0 INT_MUHENKAN>; key-positions = <11 10>; };
+        select_all { bindings = <&kp LC(A)>; key-positions = <10 22>; };
+        copy { bindings = <&kp LC(C)>; key-positions = <22 24>; };
+        paste { bindings = <&kp LC(V)>; key-positions = <22 25>; };
+        cut { bindings = <&kp LC(X)>; key-positions = <22 23>; };
 
-        tab {
-            bindings = <&kp TAB>;
-            key-positions = <11 12>;
-        };
+        // --- 濁音・半濁音 (既存) ---
+        c_da { key-positions = <0 21>; bindings = <&da_macro>; };
+        c_de { key-positions = <1 21>; bindings = <&de_macro>; };
+        c_zu { key-positions = <3 21>; bindings = <&zu_macro>; };
+        c_ga { key-positions = <4 21>; bindings = <&ga_macro>; };
+        c_di { key-positions = <10 21>; bindings = <&di_macro>; };
+        c_do { key-positions = <11 21>; bindings = <&do_macro>; };
+        c_zi { key-positions = <12 21>; bindings = <&zi_macro>; };
+        c_gi { key-positions = <14 21>; bindings = <&gi_macro>; };
+        c_gu { key-positions = <17 21>; bindings = <&gu_macro>; };
+        c_du { key-positions = <22 21>; bindings = <&du_macro>; };
+        c_za { key-positions = <23 21>; bindings = <&za_macro>; };
+        c_zo { key-positions = <24 21>; bindings = <&zo_macro>; };
+        c_bi { key-positions = <25 21>; bindings = <&bi_macro>; };
+        c_go { key-positions = <26 21>; bindings = <&go_macro>; };
+        c_ba { key-positions = <27 21>; bindings = <&ba_macro>; };
+        c_pa { key-positions = <27 33>; bindings = <&pa_macro>; };
+        c_pi { key-positions = <25 33>; bindings = <&pi_macro>; };
+        c_bu { key-positions = <1 41 21>; bindings = <&bu_macro>; };
+        c_bo { key-positions = <12 41 21>; bindings = <&bo_macro>; };
+        c_be { key-positions = <11 41 21>; bindings = <&be_macro>; };
+        c_ze { key-positions = <9 41 21>; bindings = <&ze_macro>; };
+        c_ge { key-positions = <18 41 21>; bindings = <&ge_macro>; };
+        c_pu { key-positions = <1 41 33>; bindings = <&pu_macro>; };
+        c_po { key-positions = <12 41 33>; bindings = <&po_macro>; };
+        c_pe { key-positions = <11 41 33>; bindings = <&pe_macro>; };
 
-        muhennkann {
-            bindings = <&to_layer_0 INT_MUHENKAN>;
-            key-positions = <11 10>;
-        };
-
-        select_all {
-            bindings = <&kp LC(A)>;
-            key-positions = <10 22>;
-        }; // A(10) + Z(22) で全選択
-        copy {
-            bindings = <&kp LC(C)>;
-            key-positions = <22 24>;
-        };       // Z + C
-        paste {
-            bindings = <&kp LC(V)>;
-            key-positions = <22 25>;
-        }; // Z + V
-        cut {
-            bindings = <&kp LC(X)>;
-            key-positions = <22 23>;
-        }; // Z + X
         // ==========================================================
-        // 濁音・半濁音コンボ (濁点=@:21, 半濁点=[:33)
-        // ==========================================================
-        // L0の濁音 (2キー)
-
-        c_da {
-            key-positions = <0 21>;
-            bindings = <&da_macro>;
-        }; // た(Q)
-        c_de {
-            key-positions = <1 21>;
-            bindings = <&de_macro>;
-        }; // て(W)
-        c_zu {
-            key-positions = <3 21>;
-            bindings = <&zu_macro>;
-        }; // す(R)
-        c_ga {
-            key-positions = <4 21>;
-            bindings = <&ga_macro>;
-        }; // か(T)
-        c_di {
-            key-positions = <10 21>;
-            bindings = <&di_macro>;
-        }; // ち(A)
-        c_do {
-            key-positions = <11 21>;
-            bindings = <&do_macro>;
-        }; // と(S)
-        c_zi {
-            key-positions = <12 21>;
-            bindings = <&zi_macro>;
-        }; // し(D)
-        c_gi {
-            key-positions = <14 21>;
-            bindings = <&gi_macro>;
-        }; // き(G)
-        c_gu {
-            key-positions = <17 21>;
-            bindings = <&gu_macro>;
-        }; // ぐ(H)
-        c_du {
-            key-positions = <22 21>;
-            bindings = <&du_macro>;
-        }; // つ(Z)
-        c_za {
-            key-positions = <23 21>;
-            bindings = <&za_macro>;
-        }; // さ(X)
-        c_zo {
-            key-positions = <24 21>;
-            bindings = <&zo_macro>;
-        }; // そ(C)
-        c_bi {
-            key-positions = <25 21>;
-            bindings = <&bi_macro>;
-        }; // ひ(V)
-        c_go {
-            key-positions = <26 21>;
-            bindings = <&go_macro>;
-        }; // こ(B)
-        c_ba {
-            key-positions = <27 21>;
-            bindings = <&ba_macro>;
-        }; // は(F)
-        // L0の半濁音 (2キー)
-
-        c_pa {
-            key-positions = <27 33>;
-            bindings = <&pa_macro>;
-        }; // ぱ(F) + [
-        c_pi {
-            key-positions = <25 33>;
-            bindings = <&pi_macro>;
-        }; // ぴ(V) + [
-        // L1の濁音・半濁音 (3キー: 文字+L1+濁点)
-
-        c_bu {
-            key-positions = <1 41 21>;
-            bindings = <&bu_macro>;
-        }; // ふ(W+L1) + @
-        c_bo {
-            key-positions = <12 41 21>;
-            bindings = <&bo_macro>;
-        }; // ほ(D+L1) + @
-        c_be {
-            key-positions = <11 41 21>;
-            bindings = <&be_macro>;
-        }; // へ(S+L1) + @
-        c_ze {
-            key-positions = <9 41 21>;
-            bindings = <&ze_macro>;
-        }; // せ(P+L1) + @
-        // 「げ」のコンボ：Enter(18) + 右親指L1(41) + @(21)
-
-        c_ge {
-            key-positions = <18 41 21>;
-            bindings = <&ge_macro>;
-        };
-
-        c_pu {
-            key-positions = <1 41 33>;
-            bindings = <&pu_macro>;
-        }; // ふ(W+L1) + [
-        c_po {
-            key-positions = <12 41 33>;
-            bindings = <&po_macro>;
-        }; // ほ(D+L1) + [
-        c_pe {
-            key-positions = <11 41 33>;
-            bindings = <&pe_macro>;
-        }; // へ(S+L1) + [
-        // ==========================================================
-        // 特殊かな L1コンボ (文字 + 右親指L1:41)
+        // 新設：拗音・外来音コンボ (親指 T1:37, T2:38, T3:39, T4:40, T5:41)
         // ==========================================================
 
-        c_nu {
-            key-positions = <0 41>;
-            bindings = <&kp N1>;
-        };    // ぬ (Q+L1)
-        c_fu {
-            key-positions = <1 41>;
-            bindings = <&kp N2>;
-        };    // ふ (W+L1)
-        c_a {
-            key-positions = <2 41>;
-            bindings = <&kp N3>;
-        };    // あ (E+L1)
-        c_u {
-            key-positions = <3 41>;
-            bindings = <&kp N4>;
-        };    // う (R+L1)
-        c_e {
-            key-positions = <4 41>;
-            bindings = <&kp N5>;
-        };    // え (T+L1)
-        c_o {
-            key-positions = <5 41>;
-            bindings = <&kp N6>;
-        };    // お (Y+L1)
-        c_ho {
-            key-positions = <12 41>;
-            bindings = <&kp MINUS>;
-        }; // ほ (D+L1)
-        c_he {
-            key-positions = <11 41>;
-            bindings = <&kp EQUAL>;
-        }; // へ (S+L1)
-        c_ya {
-            key-positions = <6 41>;
-            bindings = <&kp N7>;
-        };    // や (U+L1)
-        c_yu {
-            key-positions = <7 41>;
-            bindings = <&kp N8>;
-        };    // ゆ (I+L1)
-        c_yo {
-            key-positions = <8 41>;
-            bindings = <&kp N9>;
-        };    // よ (O+L1)
-        c_wa {
-            key-positions = <9 41>;
-            bindings = <&kp N0>;
-        };    // わ (P+L1)
-        c_cho {
-            key-positions = <10 41>;
-            bindings = <&kp INT3>;
-        }; // ー (A+L1)
-        c_ro {
-            key-positions = <21 41>;
-            bindings = <&kp INTERNATIONAL_1>;
-        }; // ろ (@+L1)
-        c_re {
-            key-positions = <17 41>;
-            bindings = <&kp SEMICOLON>;
-        };   // れ (H+L1)
-        c_ke {
-            key-positions = <18 41>;
-            bindings = <&kp SQT>;
-        };         // け (Enter+L1)
-        c_mu {
-            key-positions = <19 41>;
-            bindings = <&kp NON_US_HASH>;
-        }; // む (K+L1)
-        c_me {
-            key-positions = <20 41>;
-            bindings = <&kp SLASH>;
-        };       // め (L+L1)
-        // ==========================================================
-        // 小書き文字・句読点コンボ (左親指Shift:38)
-        // ==========================================================
-        // 2キー：ベースがL0にあるもの
+        // --- きゃ・きゅ・きょ ---
+        combo_kya { key-positions = <14 37>; bindings = <&m_kya>; };
+        combo_kyu { key-positions = <14 39>; bindings = <&m_kyu>; };
+        combo_kyo { key-positions = <14 41>; bindings = <&m_kyo>; };
 
-        c_s_i {
-            key-positions = <2 38>;
-            bindings = <&kp LS(E)>;
-        };  // ぃ (E+左Shift)
-        c_s_tu {
-            key-positions = <22 38>;
-            bindings = <&kp LS(Z)>;
-        };  // っ (Z+左Shift)
-        c_ten {
-            key-positions = <31 38>;
-            bindings = <&kp LS(COMMA)>;
-        }; // 、 (,+左Shift)
-        c_maru {
-            key-positions = <32 38>;
-            bindings = <&kp LS(DOT)>;
-        };   // 。 (.+左Shift)
-        // 3キー：ベースがL1にあるもの (文字 + Shift + L1)
+        // --- しゃ・しゅ・しょ・しぇ ---
+        combo_sha { key-positions = <12 37>; bindings = <&m_sha>; };
+        combo_shu { key-positions = <12 39>; bindings = <&m_shu>; };
+        combo_sho { key-positions = <12 41>; bindings = <&m_sho>; };
+        combo_she { key-positions = <12 40>; bindings = <&m_she>; };
 
-        c_s_a {
-            key-positions = <2 38 41>;
-            bindings = <&kp LS(N3)>;
-        }; // ぁ (E+Shift+L1)
-        c_s_u {
-            key-positions = <3 38 41>;
-            bindings = <&kp LS(N4)>;
-        }; // ぅ (R+Shift+L1)
-        c_s_e {
-            key-positions = <4 38 41>;
-            bindings = <&kp LS(N5)>;
-        }; // ぇ (T+Shift+L1)
-        c_s_o {
-            key-positions = <5 38 41>;
-            bindings = <&kp LS(N6)>;
-        }; // ぉ (Y+Shift+L1)
-        c_s_ya {
-            key-positions = <6 38 41>;
-            bindings = <&kp LS(N7)>;
-        }; // ゃ (U+Shift+L1)
-        c_s_yu {
-            key-positions = <7 38 41>;
-            bindings = <&kp LS(N8)>;
-        }; // ゅ (I+Shift+L1)
-        c_s_yo {
-            key-positions = <8 38 41>;
-            bindings = <&kp LS(N9)>;
-        }; // ょ (O+Shift+L1)
-        c_wo {
-            key-positions = <9 38 41>;
-            bindings = <&kp LS(N0)>;
-        }; // を (P+Shift+L1)
+        // --- ちゃ・ちゅ・ちょ・ちぇ ---
+        combo_cha { key-positions = <10 37>; bindings = <&m_cha>; };
+        combo_chu { key-positions = <10 39>; bindings = <&m_chu>; };
+        combo_cho_y { key-positions = <10 41>; bindings = <&m_cho_y>; };
+        combo_che { key-positions = <10 40>; bindings = <&m_che>; };
+
+        // --- にゃ・にゅ・にょ ---
+        combo_nya { key-positions = <7 37>; bindings = <&m_nya>; };
+        combo_nyu { key-positions = <7 39>; bindings = <&m_nyu>; };
+        combo_nyo { key-positions = <7 41>; bindings = <&m_nyo>; };
+
+        // --- ひゃ・ひゅ・ひょ ---
+        combo_hya { key-positions = <25 37>; bindings = <&m_hya>; };
+        combo_hyu { key-positions = <25 39>; bindings = <&m_hyu>; };
+        combo_hyo { key-positions = <25 41>; bindings = <&m_hyo>; };
+
+        // --- みゃ・みゅ・みょ ---
+        combo_mya { key-positions = <29 37>; bindings = <&m_mya>; };
+        combo_myu { key-positions = <29 39>; bindings = <&m_myu>; };
+        combo_myo { key-positions = <29 41>; bindings = <&m_myo>; };
+
+        // --- りゃ・りゅ・りょ ---
+        combo_rya { key-positions = <20 37>; bindings = <&m_rya>; };
+        combo_ryu { key-positions = <20 39>; bindings = <&m_ryu>; };
+        combo_ryo { key-positions = <20 41>; bindings = <&m_ryo>; };
+
+        // --- ふぁ・ふぃ・ふぅ・ふぇ・ふぉ ---
+        combo_fua { key-positions = <1 37>; bindings = <&m_fua>; };
+        combo_fi  { key-positions = <1 38>; bindings = <&m_fi>; };
+        combo_fyu { key-positions = <1 39>; bindings = <&m_fyu>; };
+        combo_fue { key-positions = <1 40>; bindings = <&m_fue>; };
+        combo_fuo { key-positions = <1 41>; bindings = <&m_fuo>; };
+
+        // --- うぃ・うぇ・うぉ / つぁ・つぃ・つぇ・つぉ ---
+        combo_wi  { key-positions = <3 38>; bindings = <&m_wi>; };
+        combo_we  { key-positions = <3 40>; bindings = <&m_we>; };
+        combo_wo  { key-positions = <3 41>; bindings = <&m_wo_f>; };
+        combo_tsa { key-positions = <22 37>; bindings = <&m_tsa>; };
+        combo_tsi { key-positions = <22 38>; bindings = <&m_tsi>; };
+        combo_tse { key-positions = <22 40>; bindings = <&m_tse>; };
+        combo_tso { key-positions = <22 41>; bindings = <&m_tso>; };
+
+        // --- てぃ・てゅ / とぅ ---
+        combo_ti  { key-positions = <1 38>; bindings = <&m_fi>; }; // fi優先
+        combo_tyu { key-positions = <1 39>; bindings = <&m_tyu>; };
+        combo_tu_f { key-positions = <11 39>; bindings = <&m_tu_f>; };
+
+        // --- 濁音拗音 (3キー) ---
+        combo_gya { key-positions = <14 21 37>; bindings = <&m_gya>; };
+        combo_gyu { key-positions = <14 21 39>; bindings = <&m_gyu>; };
+        combo_gyo { key-positions = <14 21 41>; bindings = <&m_gyo>; };
+        combo_zya { key-positions = <12 21 37>; bindings = <&m_zya>; };
+        combo_zyu { key-positions = <12 21 39>; bindings = <&m_zyu>; };
+        combo_zyo { key-positions = <12 21 41>; bindings = <&m_zyo>; };
+        combo_bya { key-positions = <25 21 37>; bindings = <&m_bya>; };
+        combo_byu { key-positions = <25 21 39>; bindings = <&m_byu>; };
+        combo_byo { key-positions = <25 21 41>; bindings = <&m_byo>; };
+        combo_pya { key-positions = <25 33 37>; bindings = <&m_pya>; };
+        combo_pyu { key-positions = <25 33 39>; bindings = <&m_pyu>; };
+        combo_pyo { key-positions = <25 33 41>; bindings = <&m_pyo>; };
+        combo_dya { key-positions = <10 21 37>; bindings = <&m_dya>; };
+        combo_dyu { key-positions = <10 21 39>; bindings = <&m_dyu>; };
+        combo_dyo { key-positions = <10 21 41>; bindings = <&m_dyo>; };
+        combo_va  { key-positions = <1 21 37>; bindings = <&m_va>; };
+        combo_vi  { key-positions = <1 21 38>; bindings = <&m_vi>; };
+        combo_ve  { key-positions = <1 21 40>; bindings = <&m_ve>; };
+        combo_vo  { key-positions = <1 21 41>; bindings = <&m_vo>; };
+        combo_je  { key-positions = <12 21 40>; bindings = <&m_je>; };
+        combo_du_f { key-positions = <11 21 39>; bindings = <&m_du_f>; };
+
+        // --- その他 (既存) ---
+        c_nu { key-positions = <0 41>; bindings = <&kp N1>; };
+        c_fu { key-positions = <1 41>; bindings = <&kp N2>; };
+        c_a  { key-positions = <2 41>; bindings = <&kp N3>; };
+        c_u  { key-positions = <3 41>; bindings = <&kp N4>; };
+        c_e  { key-positions = <4 41>; bindings = <&kp N5>; };
+        c_o  { key-positions = <5 41>; bindings = <&kp N6>; };
+        c_ho { key-positions = <12 41>; bindings = <&kp MINUS>; };
+        c_he { key-positions = <11 41>; bindings = <&kp EQUAL>; };
+        c_ya { key-positions = <6 41>; bindings = <&kp N7>; };
+        c_yu { key-positions = <7 41>; bindings = <&kp N8>; };
+        c_yo { key-positions = <8 41>; bindings = <&kp N9>; };
+        c_wa { key-positions = <9 41>; bindings = <&kp N0>; };
+        c_cho { key-positions = <10 41>; bindings = <&kp INT3>; };
+        c_ro { key-positions = <21 41>; bindings = <&kp INTERNATIONAL_1>; };
+        c_re { key-positions = <17 41>; bindings = <&kp SEMICOLON>; };
+        c_ke { key-positions = <18 41>; bindings = <&kp SQT>; };
+        c_mu { key-positions = <19 41>; bindings = <&kp NON_US_HASH>; };
+        c_me { key-positions = <20 41>; bindings = <&kp SLASH>; };
+        c_s_i { key-positions = <2 38>; bindings = <&kp LS(E)>; };
+        c_s_tu { key-positions = <22 38>; bindings = <&kp LS(Z)>; };
+        c_ten { key-positions = <31 38>; bindings = <&kp LS(COMMA)>; };
+        c_maru { key-positions = <32 38>; bindings = <&kp LS(DOT)>; };
+        c_s_a { key-positions = <2 38 41>; bindings = <&kp LS(N3)>; };
+        c_s_u { key-positions = <3 38 41>; bindings = <&kp LS(N4)>; };
+        c_s_e { key-positions = <4 38 41>; bindings = <&kp LS(N5)>; };
+        c_s_o { key-positions = <5 38 41>; bindings = <&kp LS(N6)>; };
+        c_s_ya { key-positions = <6 38 41>; bindings = <&kp LS(N7)>; };
+        c_s_yu { key-positions = <7 38 41>; bindings = <&kp LS(N8)>; };
+        c_s_yo { key-positions = <8 38 41>; bindings = <&kp LS(N9)>; };
+        c_wo { key-positions = <9 38 41>; bindings = <&kp LS(N0)>; };
     };
 
     macros {
-        to_layer_0: to_layer_0 {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
-            label = "TO_LAYER_0";
-        };
+        // --- 既存マクロ ---
+        to_layer_0: to_layer_0 { compatible = "zmk,behavior-macro-one-param"; #binding-cells = <1>; bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>; label = "TO_LAYER_0"; };
+        ga_macro: ga_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp T &kp LEFT_BRACKET>; label = "GA_MACRO"; };
+        da_macro: da_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp Q &kp LEFT_BRACKET>; label = "DA_MACRO"; };
+        za_macro: za_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp X &kp LEFT_BRACKET>; label = "ZA_MACRO"; };
+        ba_macro: ba_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp F &kp LEFT_BRACKET>; label = "BA_MACRO"; };
+        gi_macro: gi_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp G &kp LEFT_BRACKET>; label = "GI_MACRO"; };
+        zi_macro: zi_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp D &kp LEFT_BRACKET>; label = "ZI_MACRO"; };
+        bi_macro: bi_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp V &kp LEFT_BRACKET>; label = "BI_MACRO"; };
+        di_macro: di_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp A &kp LEFT_BRACKET>; label = "DI_MACRO"; };
+        gu_macro: gu_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp H &kp LEFT_BRACKET>; label = "GU_MACRO"; };
+        zu_macro: zu_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp R &kp LEFT_BRACKET>; label = "ZU_MACRO"; };
+        de_macro: de_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp W &kp LEFT_BRACKET>; label = "DE_MACRO"; };
+        du_macro: du_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp Z &kp LEFT_BRACKET>; label = "DU_MACRO"; };
+        ge_macro: ge_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp SQT &kp LEFT_BRACKET>; label = "GE_MACRO"; };
+        ze_macro: ze_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp P &kp LEFT_BRACKET>; label = "ZE_MACRO"; };
+        be_macro: be_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp EQUAL &kp LEFT_BRACKET>; label = "BE_MACRO"; };
+        bo_macro: bo_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp MINUS &kp LEFT_BRACKET>; label = "BO_MACRO"; };
+        bu_macro: bu_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp NUMBER_2 &kp LEFT_BRACKET>; label = "BU_MACRO"; };
+        go_macro: go_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp B &kp LEFT_BRACKET>; label = "GO_MACRO"; };
+        do_macro: do_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp S &kp LEFT_BRACKET>; label = "DO_MACRO"; };
+        zo_macro: zo_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp C &kp LEFT_BRACKET>; label = "ZO_MACRO"; };
+        pa_macro: pa_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp F &kp RIGHT_BRACKET>; label = "PA_MACRO"; };
+        pi_macro: pi_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp V &kp RIGHT_BRACKET>; label = "PI_MACRO"; };
+        pu_macro: pu_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp NUMBER_2 &kp RIGHT_BRACKET>; label = "PU_MACRO"; };
+        pe_macro: pe_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp EQUAL &kp RIGHT_BRACKET>; label = "PE_MACRO"; };
+        po_macro: po_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp MINUS &kp RIGHT_BRACKET>; label = "PO_MACRO"; };
+        m_paren_sp: m_paren_sp { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LANGUAGE_2 &kp SPACE &kp LS(N8) &kp LS(N9) &kp SPACE &kp LEFT &kp LEFT &kp LANGUAGE_1>; label = "M_PAREN_SP"; };
+        m_bracket_jp: m_bracket_jp { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LANGUAGE_2 &kp RBKT &kp NON_US_HASH &kp LEFT &kp LANGUAGE_1>; label = "M_BRACKET_JP"; };
+        m_dquote: m_dquote { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LANGUAGE_2 &kp LS(N2) &kp LS(N2) &kp LEFT &kp LANGUAGE_1>; label = "M_DQUOTE"; };
+        m_squote: m_squote { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LANGUAGE_2 &kp LS(N7) &kp LS(N7) &kp LEFT &kp LANGUAGE_1>; label = "M_SQUOTE"; };
 
-        ga_macro: ga_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp T &kp LEFT_BRACKET>;
-            label = "GA_MACRO";
-        };
+        // --- 新設：拗音用マクロ ---
+        m_kya: m_kya { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp G &kp LS(N7)>; label = "M_KYA"; };
+        m_kyu: m_kyu { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp G &kp LS(N8)>; label = "M_KYU"; };
+        m_kyo: m_kyo { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp G &kp LS(N9)>; label = "M_KYO"; };
+        m_sha: m_sha { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp D &kp LS(N7)>; label = "M_SHA"; };
+        m_shu: m_shu { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp D &kp LS(N8)>; label = "M_SHU"; };
+        m_sho: m_sho { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp D &kp LS(N9)>; label = "M_SHO"; };
+        m_cha: m_cha { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp A &kp LS(N7)>; label = "M_CHA"; };
+        m_chu: m_chu { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp A &kp LS(N8)>; label = "M_CHU"; };
+        m_cho_y: m_cho_y { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp A &kp LS(N9)>; label = "M_CHO_Y"; };
+        m_nya: m_nya { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp I &kp LS(N7)>; label = "M_NYA"; };
+        m_nyu: m_nyu { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp I &kp LS(N8)>; label = "M_NYU"; };
+        m_nyo: m_nyo { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp I &kp LS(N9)>; label = "M_NYO"; };
+        m_hya: m_hya { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp V &kp LS(N7)>; label = "M_HYA"; };
+        m_hyu: m_hyu { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp V &kp LS(N8)>; label = "M_HYU"; };
+        m_hyo: m_hyo { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp V &kp LS(N9)>; label = "M_HYO"; };
+        m_mya: m_mya { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N &kp LS(N7)>; label = "M_MYA"; };
+        m_myu: m_myu { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N &kp LS(N8)>; label = "M_MYU"; };
+        m_myo: m_myo { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N &kp LS(N9)>; label = "M_MYO"; };
+        m_rya: m_rya { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp L &kp LS(N7)>; label = "M_RYA"; };
+        m_ryu: m_ryu { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp L &kp LS(N8)>; label = "M_RYU"; };
+        m_ryo: m_ryo { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp L &kp LS(N9)>; label = "M_RYO"; };
+        m_fua: m_fua { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp NUMBER_2 &kp LS(NUMBER_3)>; label = "M_FUA"; };
+        m_fi:  m_fi  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp NUMBER_2 &kp LS(E)>; label = "M_FI"; };
+        m_fyu: m_fyu { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp NUMBER_2 &kp LS(NUMBER_8)>; label = "M_FYU"; };
+        m_fue: m_fue { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp NUMBER_2 &kp LS(NUMBER_5)>; label = "M_FUE"; };
+        m_fuo: m_fuo { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp NUMBER_2 &kp LS(NUMBER_6)>; label = "M_FUO"; };
+        m_wi:  m_wi  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp NUMBER_4 &kp LS(E)>; label = "M_WI"; };
+        m_we:  m_we  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp NUMBER_4 &kp LS(NUMBER_5)>; label = "M_WE"; };
+        m_wo_f:m_wo_f{ compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp NUMBER_4 &kp LS(NUMBER_6)>; label = "M_WO_F"; };
+        m_tsa: m_tsa { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp Z &kp LS(NUMBER_3)>; label = "M_TSA"; };
+        m_tsi: m_tsi { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp Z &kp LS(E)>; label = "M_TSI"; };
+        m_tse: m_tse { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp Z &kp LS(NUMBER_5)>; label = "M_TSE"; };
+        m_tso: m_tso { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp Z &kp LS(NUMBER_6)>; label = "M_TSO"; };
+        m_she: m_she { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp D &kp LS(NUMBER_5)>; label = "M_SHE"; };
+        m_che: m_che { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp A &kp LS(NUMBER_5)>; label = "M_CHE"; };
+        m_tyu: m_tyu { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp W &kp LS(NUMBER_4)>; label = "M_TYU"; };
+        m_tu_f:m_tu_f{ compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp S &kp LS(NUMBER_4)>; label = "M_TU_F"; };
 
-        da_macro: da_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp Q &kp LEFT_BRACKET>;
-            label = "DA_MACRO";
-        };
-
-        za_macro: za_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp X &kp LEFT_BRACKET>;
-            label = "ZA_MACRO";
-        };
-
-        ba_macro: ba_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp F &kp LEFT_BRACKET>;
-            label = "BA_MACRO";
-        };
-
-        gi_macro: gi_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp G &kp LEFT_BRACKET>;
-            label = "GI_MACRO";
-        };
-
-        zi_macro: zi_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp D &kp LEFT_BRACKET>;
-            label = "ZI_MACRO";
-        };
-
-        bi_macro: bi_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp V &kp LEFT_BRACKET>;
-            label = "BI_MACRO";
-        };
-
-        di_macro: di_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp A &kp LEFT_BRACKET>;
-            label = "DI_MACRO";
-        };
-
-        gu_macro: gu_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp H &kp LEFT_BRACKET>;
-            label = "GU_MACRO";
-        };
-
-        zu_macro: zu_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp R &kp LEFT_BRACKET>;
-            label = "ZU_MACRO";
-        };
-
-        de_macro: de_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp W &kp LEFT_BRACKET>;
-            label = "DE_MACRO";
-        };
-
-        du_macro: du_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp Z &kp LEFT_BRACKET>;
-            label = "DU_MACRO";
-        };
-
-        ge_macro: ge_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp SQT &kp LEFT_BRACKET>;
-            label = "GE_MACRO";
-        };
-
-        ze_macro: ze_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp P &kp LEFT_BRACKET>;
-            label = "ZE_MACRO";
-        };
-
-        be_macro: be_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp EQUAL &kp LEFT_BRACKET>;
-            label = "BE_MACRO";
-        };
-
-        bo_macro: bo_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp MINUS &kp LEFT_BRACKET>;
-            label = "BO_MACRO";
-        };
-
-        bu_macro: bu_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp NUMBER_2 &kp LEFT_BRACKET>;
-            label = "BU_MACRO";
-        };
-
-        go_macro: go_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp B &kp LEFT_BRACKET>;
-            label = "GO_MACRO";
-        };
-
-        do_macro: do_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp S &kp LEFT_BRACKET>;
-            label = "DO_MACRO";
-        };
-
-        zo_macro: zo_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp C &kp LEFT_BRACKET>;
-            label = "ZO_MACRO";
-        };
-
-        pa_macro: pa_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp F &kp RIGHT_BRACKET>;
-            label = "PA_MACRO";
-        };
-
-        pi_macro: pi_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp V &kp RIGHT_BRACKET>;
-            label = "PI_MACRO";
-        };
-
-        pu_macro: pu_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp NUMBER_2 &kp RIGHT_BRACKET>;
-            label = "PU_MACRO";
-        };
-
-        pe_macro: pe_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp EQUAL &kp RIGHT_BRACKET>;
-            label = "PE_MACRO";
-        };
-
-        po_macro: po_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp MINUS &kp RIGHT_BRACKET>;
-            label = "PO_MACRO";
-        };
-
-        // --- 修正箇所：LANG2 → 記号入力 → カーソル移動 → LANG1 ---
-        m_paren_sp: m_paren_sp {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LANGUAGE_2 &kp SPACE &kp LS(N8) &kp LS(N9) &kp SPACE &kp LEFT &kp LEFT &kp LANGUAGE_1>;
-            label = "M_PAREN_SP";
-        };
-
-        m_bracket_jp: m_bracket_jp {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LANGUAGE_2 &kp RBKT &kp NON_US_HASH &kp LEFT &kp LANGUAGE_1>;
-            label = "M_BRACKET_JP";
-        };
-
-        m_dquote: m_dquote {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LANGUAGE_2 &kp LS(N2) &kp LS(N2) &kp LEFT &kp LANGUAGE_1>;
-            label = "M_DQUOTE";
-        };
-
-        m_squote: m_squote {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LANGUAGE_2 &kp LS(N7) &kp LS(N7) &kp LEFT &kp LANGUAGE_1>;
-            label = "M_SQUOTE";
-        };
+        // --- 新設：濁音拗音マクロ ---
+        m_gya: m_gya { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp G &kp LEFT_BRACKET &kp LS(N7)>; label = "M_GYA"; };
+        m_gyu: m_gyu { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp G &kp LEFT_BRACKET &kp LS(N8)>; label = "M_GYU"; };
+        m_gyo: m_gyo { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp G &kp LEFT_BRACKET &kp LS(N9)>; label = "M_GYO"; };
+        m_zya: m_zya { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp D &kp LEFT_BRACKET &kp LS(N7)>; label = "M_ZYA"; };
+        m_zyu: m_zyu { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp D &kp LEFT_BRACKET &kp LS(N8)>; label = "M_ZYU"; };
+        m_zyo: m_zyo { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp D &kp LEFT_BRACKET &kp LS(N9)>; label = "M_ZYO"; };
+        m_bya: m_bya { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp V &kp LEFT_BRACKET &kp LS(N7)>; label = "M_BYA"; };
+        m_byu: m_byu { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp V &kp LEFT_BRACKET &kp LS(N8)>; label = "M_BYU"; };
+        m_byo: m_byo { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp V &kp LEFT_BRACKET &kp LS(N9)>; label = "M_BYO"; };
+        m_pya: m_pya { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp V &kp RIGHT_BRACKET &kp LS(N7)>; label = "M_PYA"; };
+        m_pyu: m_pyu { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp V &kp RIGHT_BRACKET &kp LS(N8)>; label = "M_PYU"; };
+        m_pyo: m_pyo { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp V &kp RIGHT_BRACKET &kp LS(N9)>; label = "M_PYO"; };
+        m_dya: m_dya { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp A &kp LEFT_BRACKET &kp LS(N7)>; label = "M_DYA"; };
+        m_dyu: m_dyu { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp A &kp LEFT_BRACKET &kp LS(N8)>; label = "M_DYU"; };
+        m_dyo: m_dyo { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp A &kp LEFT_BRACKET &kp LS(N9)>; label = "M_DYO"; };
+        m_va:  m_va  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp NUMBER_2 &kp LEFT_BRACKET &kp LS(NUMBER_3)>; label = "M_VA"; };
+        m_vi:  m_vi  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp NUMBER_2 &kp LEFT_BRACKET &kp LS(E)>; label = "M_VI"; };
+        m_ve:  m_ve  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp NUMBER_2 &kp LEFT_BRACKET &kp LS(NUMBER_5)>; label = "M_VE"; };
+        m_vo:  m_vo  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp NUMBER_2 &kp LEFT_BRACKET &kp LS(NUMBER_6)>; label = "M_VO"; };
+        m_je:  m_je  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp D &kp LEFT_BRACKET &kp LS(NUMBER_5)>; label = "M_JE"; };
+        m_du_f:m_du_f{ compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp S &kp LEFT_BRACKET &kp LS(NUMBER_4)>; label = "M_DU_F"; };
     };
 
     behaviors {
-        lt_bs: lt_bs {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LT_BACKSPACE";
-            bindings = <&mo>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <175>;
-            retro-tap;
-            flavor = "balanced";
-        };
-
-        lt_scroll: lt_scroll {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LT_SCROLL";
-            bindings = <&mo>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <100>;
-            quick-tap-ms = <120>;
-            flavor = "hold-preferred";
-        };
-
-        lt_retro: lt_retro {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LT_RETRO";
-            bindings = <&mo>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <100>;
-            quick-tap-ms = <120>;
-            retro-tap;
-            flavor = "balanced";
-        };
+        lt_bs: lt_bs { compatible = "zmk,behavior-hold-tap"; label = "LT_BACKSPACE"; bindings = <&mo>, <&kp>; #binding-cells = <2>; tapping-term-ms = <200>; quick-tap-ms = <175>; retro-tap; flavor = "balanced"; };
+        lt_scroll: lt_scroll { compatible = "zmk,behavior-hold-tap"; label = "LT_SCROLL"; bindings = <&mo>, <&kp>; #binding-cells = <2>; tapping-term-ms = <100>; quick-tap-ms = <120>; flavor = "hold-preferred"; };
+        lt_retro: lt_retro { compatible = "zmk,behavior-hold-tap"; label = "LT_RETRO"; bindings = <&mo>, <&kp>; #binding-cells = <2>; tapping-term-ms = <100>; quick-tap-ms = <120>; retro-tap; flavor = "balanced"; };
     };
 
     keymap {
         compatible = "zmk,keymap";
-
         Basic {
             bindings = <
 &kp Q             &kp W         &kp E      &kp R               &kp T                                                                   &kp Y                   &kp U      &kp I           &kp O    &kp P
@@ -644,7 +372,7 @@
             bindings = <
 &trans  &pu_macro  &trans     &trans  &trans                      &trans  &trans  &trans  &trans  &trans
 &trans  &pe_macro  &po_macro  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans     &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans     &trans  &trans  &trans      &trans  &trans  &trans     &trans  &trans  &trans
 &trans  &trans     &trans     &trans  &trans  &trans      &trans  &trans                          &trans
             >;
         };
