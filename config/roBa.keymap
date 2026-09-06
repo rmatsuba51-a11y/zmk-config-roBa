@@ -252,7 +252,16 @@
         ARROW { bindings = <&kp ESCAPE &trans &trans &trans &trans &kp C_BRI_UP &kp PAGE_UP &kp UP_ARROW &kp PAGE_DOWN &kp C_VOLUME_UP &kp LEFT_SHIFT &kp LG(C_AC_BACK) &trans &kp C_AC_FORWARD &trans &mt LCTRL LEFT_ALT &mt LEFT_SHIFT TAB &kp C_BRI_DN &kp LEFT &trans &kp RIGHT &kp C_VOLUME_DOWN &kp LCTRL &kp LG(UP_ARROW) &trans &trans &trans &trans &trans &trans &trans &kp DOWN &kp HOME &kp C_MUTE &kp LG(LEFT) &kp LG(DOWN) &kp LG(RIGHT) &trans &trans &trans &m_paren_sp &m_bracket_jp &trans>; };
         layer_3 { bindings = <&kp KP_NUMLOCK &trans &trans &trans &trans &kp LS(MINUS) &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp KP_N0 &trans &trans &trans &trans &trans &trans &kp KP_ASTERISK &kp KP_PLUS &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_DOT &trans &trans &trans &trans &trans &trans &kp KP_SLASH &kp KP_MINUS &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp INT3 &trans &trans &trans &trans &trans &trans &m_dquote &m_squote &trans>; };
         SCROLL { bindings = <&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans>; };
-        layer_5 { bindings = <&trans &trans &trans &trans &trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &trans &trans &trans &trans &trans &trans &trans &trans &bt BT_SEL 4 &trans &trans &trans &trans &trans &trans &trans &bt BT_CLR &bt BT_CLR_ALL &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans>; };
+        
+        layer_5 { 
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                      &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &bt BT_SEL 4  &trans          &trans        &trans        &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &bt BT_CLR    &bt BT_CLR_ALL  &trans        &trans        &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                                    &trans
+            >; 
+        };
+
         layer_6 { bindings = <&da_macro &de_macro &trans &zu_macro &ga_macro &trans &trans &trans &trans &ze_macro &di_macro &do_macro &zi_macro &trans &gi_macro &trans &trans &gu_macro &trans &trans &trans &trans &du_macro &za_macro &zo_macro &bi_macro &go_macro &ba_macro &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans>; };
         layer_7 { bindings = <&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &pi_macro &trans &pa_macro &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans>; };
         layer_8 { bindings = <&trans &bu_macro &trans &trans &trans &trans &trans &trans &trans &trans &trans &be_macro &bo_macro &trans &trans &trans &trans &trans &ge_macro &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans>; };
