@@ -104,57 +104,57 @@
         // 拗音・外来語コンボ
         // ==========================================================
 
-        // --- 左手子音(き,し,ち,ひ) + 右手役割キー ---
-        c_kya { key-positions = <14 6>; bindings = <&m_kya>; }; 
-        c_kyu { key-positions = <14 7>; bindings = <&m_kyu>; }; 
-        c_kyo { key-positions = <14 8>; bindings = <&m_kyo>; }; 
-        c_sha { key-positions = <12 6>; bindings = <&m_sha>; }; 
-        c_shu { key-positions = <12 7>; bindings = <&m_shu>; }; 
-        c_sho { key-positions = <12 8>; bindings = <&m_sho>; }; 
-        c_cha { key-positions = <10 6>; bindings = <&m_cha>; }; 
-        c_chu { key-positions = <10 7>; bindings = <&m_chu>; }; 
-        c_cho_y { key-positions = <10 8>; bindings = <&m_cho_y>; }; 
-        c_hya { key-positions = <25 6>; bindings = <&m_hya>; }; 
-        c_hyu { key-positions = <25 7>; bindings = <&m_hyu>; }; 
-        c_hyo { key-positions = <25 8>; bindings = <&m_hyo>; }; 
+        // --- 左手子音(き,し,ち,ひ) + 右手役割キー(j, n, m, ,, .) ---
+        c_kya { key-positions = <14 29>; bindings = <&m_kya>; }; 
+        c_kyu { key-positions = <14 30>; bindings = <&m_kyu>; }; 
+        c_kyo { key-positions = <14 31>; bindings = <&m_kyo>; }; 
+        c_sha { key-positions = <12 29>; bindings = <&m_sha>; }; 
+        c_shu { key-positions = <12 30>; bindings = <&m_shu>; }; 
+        c_sho { key-positions = <12 31>; bindings = <&m_sho>; }; 
+        c_cha { key-positions = <10 29>; bindings = <&m_cha>; }; 
+        c_chu { key-positions = <10 30>; bindings = <&m_chu>; }; 
+        c_cho_y { key-positions = <10 31>; bindings = <&m_cho_y>; }; 
+        c_hya { key-positions = <25 29>; bindings = <&m_hya>; }; 
+        c_hyu { key-positions = <25 30>; bindings = <&m_hyu>; }; 
+        c_hyo { key-positions = <25 31>; bindings = <&m_hyo>; }; 
 
-        // --- 右手子音(に,み,り) + 左手役割キー ---
-        c_nya { key-positions = <7 1>; bindings = <&m_nya>; }; 
-        c_nyu { key-positions = <7 2>; bindings = <&m_nyu>; }; 
-        c_nyo { key-positions = <7 3>; bindings = <&m_nyo>; }; 
-        c_mya { key-positions = <29 1>; bindings = <&m_mya>; }; 
-        c_myu { key-positions = <29 2>; bindings = <&m_myu>; }; 
-        c_myo { key-positions = <29 3>; bindings = <&m_myo>; }; 
-        c_rya { key-positions = <20 1>; bindings = <&m_rya>; }; 
-        c_ryu { key-positions = <20 2>; bindings = <&m_ryu>; }; 
-        c_ryo { key-positions = <20 3>; bindings = <&m_ryo>; }; 
+        // --- 右手子音(に,み,り) + 左手役割キー(z, x, c, v, b) ---
+        c_nya { key-positions = <7 23>; bindings = <&m_nya>; }; 
+        c_nyu { key-positions = <7 24>; bindings = <&m_nyu>; }; 
+        c_nyo { key-positions = <7 25>; bindings = <&m_nyo>; }; 
+        c_mya { key-positions = <29 23>; bindings = <&m_mya>; }; 
+        c_myu { key-positions = <29 24>; bindings = <&m_myu>; }; 
+        c_myo { key-positions = <29 25>; bindings = <&m_myo>; }; 
+        c_rya { key-positions = <20 23>; bindings = <&m_rya>; }; 
+        c_ryu { key-positions = <20 24>; bindings = <&m_ryu>; }; 
+        c_ryo { key-positions = <20 25>; bindings = <&m_ryo>; }; 
 
         // --- 外来語：ふ(L1+1) ---
-        c_fa { key-positions = <1 41 5>; bindings = <&m_fa>; }; 
-        c_fi { key-positions = <1 41 6>; bindings = <&m_fi>; }; 
-        c_fyu { key-positions = <1 41 7>; bindings = <&m_fyu>; }; 
-        c_fe { key-positions = <1 41 8>; bindings = <&m_fe>; }; 
-        c_fo { key-positions = <1 41 9>; bindings = <&m_fo>; }; 
+        c_fa { key-positions = <1 41 28>; bindings = <&m_fa>; }; 
+        c_fi { key-positions = <1 41 29>; bindings = <&m_fi>; }; 
+        c_fyu { key-positions = <1 41 30>; bindings = <&m_fyu>; }; 
+        c_fe { key-positions = <1 41 31>; bindings = <&m_fe>; }; 
+        c_fo { key-positions = <1 41 32>; bindings = <&m_fo>; }; 
 
         // --- 濁音拗音 ---
-        c_gya { key-positions = <14 6 21>; bindings = <&m_gya>; };
-        c_gyu { key-positions = <14 7 21>; bindings = <&m_gyu>; };
-        c_gyo { key-positions = <14 8 21>; bindings = <&m_gyo>; };
-        c_ja  { key-positions = <12 6 21>; bindings = <&m_ja>; };
-        c_ju  { key-positions = <12 7 21>; bindings = <&m_ju>; };
-        c_jo  { key-positions = <12 8 21>; bindings = <&m_jo>; };
-        c_bya { key-positions = <25 6 21>; bindings = <&m_bya>; };
-        c_byu { key-positions = <25 7 21>; bindings = <&m_byu>; };
-        c_byo { key-positions = <25 8 21>; bindings = <&m_byo>; };
-        c_va  { key-positions = <1 41 21 5>; bindings = <&m_va>; }; 
-        c_vi  { key-positions = <1 41 21 6>; bindings = <&m_vi>; }; 
-        c_ve  { key-positions = <1 41 21 8>; bindings = <&m_ve>; }; 
-        c_vo  { key-positions = <1 41 21 9>; bindings = <&m_vo>; }; 
+        c_gya { key-positions = <14 29 21>; bindings = <&m_gya>; };
+        c_gyu { key-positions = <14 30 21>; bindings = <&m_gyu>; };
+        c_gyo { key-positions = <14 31 21>; bindings = <&m_gyo>; };
+        c_ja  { key-positions = <12 29 21>; bindings = <&m_ja>; };
+        c_ju  { key-positions = <12 30 21>; bindings = <&m_ju>; };
+        c_jo  { key-positions = <12 31 21>; bindings = <&m_jo>; };
+        c_bya { key-positions = <25 29 21>; bindings = <&m_bya>; };
+        c_byu { key-positions = <25 30 21>; bindings = <&m_byu>; };
+        c_byo { key-positions = <25 31 21>; bindings = <&m_byo>; };
+        c_va  { key-positions = <1 41 21 28>; bindings = <&m_va>; }; 
+        c_vi  { key-positions = <1 41 21 29>; bindings = <&m_vi>; }; 
+        c_ve  { key-positions = <1 41 21 31>; bindings = <&m_ve>; }; 
+        c_vo  { key-positions = <1 41 21 32>; bindings = <&m_vo>; }; 
 
         // --- 半濁音拗音 ---
-        c_pya { key-positions = <25 6 33>; bindings = <&m_pya>; };
-        c_pyu { key-positions = <25 7 33>; bindings = <&m_pyu>; };
-        c_pyo { key-positions = <25 8 33>; bindings = <&m_pyo>; };
+        c_pya { key-positions = <25 29 33>; bindings = <&m_pya>; };
+        c_pyu { key-positions = <25 30 33>; bindings = <&m_pyu>; };
+        c_pyo { key-positions = <25 31 33>; bindings = <&m_pyo>; };
     };
 
     macros {
@@ -251,7 +251,10 @@
     keymap {
         compatible = "zmk,keymap";
         Basic { bindings = <&kp Q &kp W &kp E &kp R &kp T &kp Y &kp U &kp I &kp O &kp P &mt LEFT_SHIFT A &kp S &kp D &mkp MB1 &kp G &kp LEFT_ALT &kp LA(TAB) &kp H &kp ENTER &lt_scroll 4 K &kp L &lt_retro 6 LEFT_BRACKET &kp Z &kp X &kp C &kp V &kp B &kp F &kp J &kp N &kp M &kp COMMA &kp DOT &lt_retro 7 RIGHT_BRACKET &kp LS(F5) &kp LEFT_WIN &kp LCTRL &lt_bs 3 BACKSPACE &mt LEFT_SHIFT SPACE &lt_retro 2 LANGUAGE_2 &mt LEFT_CONTROL TAB &lt_retro 1 LANGUAGE_1 &lt_retro 5 LS(LG(S))>; };
-        FUNCTION { bindings = <&kp NUMBER_1 &kp NUMBER_2 &kp NUMBER_3 &kp NUMBER_4 &kp N5 &kp NUMBER_6 &kp N7 &kp N8 &kp N9 &kp N0 &kp INT3 &kp EQUAL &kp MINUS &mkp MB2 &kp QUESTION &trans &trans &kp SEMICOLON &kp SQT &kp NON_US_HASH &kp SLASH &lt_retro 8 INTERNATIONAL_1 &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &lt_retro 9 F12 &kp LA(LC(DELETE)) &kp LG(LS(C)) &kp LG(V) &kp DELETE &m_colon_sp &m_slash_sp &trans &trans &kp LC(LS(SEMI))>; };
+        
+        // 修正箇所: 下段の &m_colon_sp を &trans に変更し、Shift透過で「！」が打てるようにしました
+        FUNCTION { bindings = <&kp NUMBER_1 &kp NUMBER_2 &kp NUMBER_3 &kp NUMBER_4 &kp N5 &kp NUMBER_6 &kp N7 &kp N8 &kp N9 &kp N0 &kp INT3 &kp EQUAL &kp MINUS &mkp MB2 &kp QUESTION &trans &trans &kp SEMICOLON &kp SQT &kp NON_US_HASH &kp SLASH &lt_retro 8 INTERNATIONAL_1 &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &lt_retro 9 F12 &kp LA(LC(DELETE)) &kp LG(LS(C)) &kp LG(V) &kp DELETE &trans &m_slash_sp &trans &trans &kp LC(LS(SEMI))>; };
+        
         ARROW { bindings = <&kp ESCAPE &trans &trans &trans &trans &kp C_BRI_UP &kp PAGE_UP &kp UP_ARROW &kp PAGE_DOWN &kp C_VOLUME_UP &kp LEFT_SHIFT &kp LG(C_AC_BACK) &trans &kp C_AC_FORWARD &trans &mt LCTRL LEFT_ALT &mt LEFT_SHIFT TAB &kp C_BRI_DN &kp LEFT &trans &kp RIGHT &kp C_VOLUME_DOWN &kp LCTRL &kp LG(UP_ARROW) &trans &trans &trans &trans &trans &trans &trans &kp DOWN &kp HOME &kp C_MUTE &kp LG(LEFT) &kp LG(DOWN) &kp LG(RIGHT) &trans &trans &trans &m_paren_sp &m_bracket_jp &trans>; };
         layer_3 { bindings = <&kp KP_NUMLOCK &trans &trans &trans &trans &kp LS(MINUS) &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp KP_N0 &trans &trans &trans &trans &trans &trans &kp KP_ASTERISK &kp KP_PLUS &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_DOT &trans &trans &trans &trans &trans &trans &kp KP_SLASH &kp KP_MINUS &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp INT3 &trans &trans &trans &trans &trans &trans &m_dquote &m_squote &trans>; };
         SCROLL { bindings = <&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans>; };
