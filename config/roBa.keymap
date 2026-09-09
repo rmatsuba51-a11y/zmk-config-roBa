@@ -104,23 +104,21 @@
         // 拗音・外来語コンボ
         // ==========================================================
 
-        // --- 左手子音(き,し,ち,ひ) + 右手役割キー(ゃ,ゅ,ょ は元の位置 / ぁぃぇぉ は下段) ---
         c_kya { key-positions = <14 6>; bindings = <&m_kya>; }; 
         c_kyu { key-positions = <14 7>; bindings = <&m_kyu>; }; 
         c_kyo { key-positions = <14 8>; bindings = <&m_kyo>; }; 
         c_sha { key-positions = <12 6>; bindings = <&m_sha>; }; 
         c_shu { key-positions = <12 7>; bindings = <&m_shu>; }; 
         c_sho { key-positions = <12 8>; bindings = <&m_sho>; }; 
-        c_she { key-positions = <12 32>; bindings = <&m_she>; }; // 追加: しぇ
+        c_she { key-positions = <12 32>; bindings = <&m_she>; }; 
         c_cha { key-positions = <10 6>; bindings = <&m_cha>; }; 
         c_chu { key-positions = <10 7>; bindings = <&m_chu>; }; 
         c_cho_y { key-positions = <10 8>; bindings = <&m_cho_y>; }; 
-        c_che { key-positions = <10 32>; bindings = <&m_che>; }; // 追加: ちぇ
+        c_che { key-positions = <10 32>; bindings = <&m_che>; }; 
         c_hya { key-positions = <25 6>; bindings = <&m_hya>; }; 
         c_hyu { key-positions = <25 7>; bindings = <&m_hyu>; }; 
         c_hyo { key-positions = <25 8>; bindings = <&m_hyo>; }; 
 
-        // --- 右手子音(に,み,り) + 左手役割キー(ゃ,ゅ,ょ は元の位置 / ぁぃぇぉ は下段) ---
         c_nya { key-positions = <7 1>; bindings = <&m_nya>; }; 
         c_nyu { key-positions = <7 2>; bindings = <&m_nyu>; }; 
         c_nyo { key-positions = <7 3>; bindings = <&m_nyo>; }; 
@@ -131,39 +129,34 @@
         c_ryu { key-positions = <20 2>; bindings = <&m_ryu>; }; 
         c_ryo { key-positions = <20 3>; bindings = <&m_ryo>; }; 
 
-        // --- 外来語：ふ(L1+1) + ぁぃぇぉ (右手下段に変更) ※ゅはそのまま ---
-        c_fa { key-positions = <1 41 29>; bindings = <&m_fa>; };  // 5(Y) -> 29(N)
-        c_fi { key-positions = <1 41 30>; bindings = <&m_fi>; };  // 6(U) -> 30(M)
-        c_fyu { key-positions = <1 41 7>; bindings = <&m_fyu>; }; // 7(I) (ゅ なので変更なし)
-        c_fe { key-positions = <1 41 32>; bindings = <&m_fe>; };  // 8(O) -> 32(.)
-        c_fo { key-positions = <1 41 33>; bindings = <&m_fo>; };  // 9(P) -> 33([)
+        c_fa { key-positions = <1 41 29>; bindings = <&m_fa>; };  
+        c_fi { key-positions = <1 41 30>; bindings = <&m_fi>; };  
+        c_fyu { key-positions = <1 41 7>; bindings = <&m_fyu>; }; 
+        c_fe { key-positions = <1 41 32>; bindings = <&m_fe>; };  
+        c_fo { key-positions = <1 41 33>; bindings = <&m_fo>; };  
 
-        // --- 濁音拗音 (ゃゅょ は元の位置) ---
         c_gya { key-positions = <14 6 21>; bindings = <&m_gya>; };
         c_gyu { key-positions = <14 7 21>; bindings = <&m_gyu>; };
         c_gyo { key-positions = <14 8 21>; bindings = <&m_gyo>; };
         c_ja  { key-positions = <12 6 21>; bindings = <&m_ja>; };
         c_ju  { key-positions = <12 7 21>; bindings = <&m_ju>; };
         c_jo  { key-positions = <12 8 21>; bindings = <&m_jo>; };
-        c_je  { key-positions = <12 32 21>; bindings = <&m_je>; }; // 追加: じぇ
+        c_je  { key-positions = <12 32 21>; bindings = <&m_je>; }; 
         c_bya { key-positions = <25 6 21>; bindings = <&m_bya>; };
         c_byu { key-positions = <25 7 21>; bindings = <&m_byu>; };
         c_byo { key-positions = <25 8 21>; bindings = <&m_byo>; };
 
-        // --- 濁音外来語 ゔぁ,ゔぃ,ゔぇ,ゔぉ (右手下段に変更) ---
         c_va  { key-positions = <1 41 21 29>; bindings = <&m_va>; }; 
         c_vi  { key-positions = <1 41 21 30>; bindings = <&m_vi>; }; 
         c_ve  { key-positions = <1 41 21 32>; bindings = <&m_ve>; }; 
         c_vo  { key-positions = <1 41 21 33>; bindings = <&m_vo>; }; 
 
-        // --- 半濁音拗音 (ゃゅょ は元の位置) ---
         c_pya { key-positions = <25 6 33>; bindings = <&m_pya>; };
         c_pyu { key-positions = <25 7 33>; bindings = <&m_pyu>; };
         c_pyo { key-positions = <25 8 33>; bindings = <&m_pyo>; };
     };
 
     macros {
-        // --- 既存のマクロ ---
         to_layer_0: to_layer_0 { compatible = "zmk,behavior-macro-one-param"; #binding-cells = <1>; bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>; label = "TO_LAYER_0"; };
         ga_macro: ga_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp T &kp LEFT_BRACKET>; label = "GA_MACRO"; };
         da_macro: da_macro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp Q &kp LEFT_BRACKET>; label = "DA_MACRO"; };
@@ -195,21 +188,21 @@
         m_dquote: m_dquote { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LANGUAGE_2 &kp LS(N2) &kp LS(N2) &kp LEFT &kp LANGUAGE_1>; label = "M_DQUOTE"; };
         m_squote: m_squote { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LANGUAGE_2 &kp LS(N7) &kp LS(N7) &kp LEFT &kp LANGUAGE_1>; label = "M_SQUOTE"; };
 
+        // 使用するマクロ
         m_colon_sp: m_colon_sp { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LANGUAGE_2 &kp SPACE &kp SQT &kp SPACE &kp LANGUAGE_1>; label = "M_COLON_SP"; };
         m_slash_sp: m_slash_sp { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LANGUAGE_2 &kp SPACE &kp SLASH &kp SPACE &kp LANGUAGE_1>; label = "M_SLASH_SP"; };
 
-        // --- 拗音・外来語用マクロ ---
         m_kya: m_kya { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp G &kp LS(N7)>; label = "KYA"; };
         m_kyu: m_kyu { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp G &kp LS(N8)>; label = "KYU"; };
         m_kyo: m_kyo { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp G &kp LS(N9)>; label = "KYO"; };
         m_sha: m_sha { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp D &kp LS(N7)>; label = "SHA"; };
         m_shu: m_shu { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp D &kp LS(N8)>; label = "SHU"; };
         m_sho: m_sho { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp D &kp LS(N9)>; label = "SHO"; };
-        m_she: m_she { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp D &kp LS(N5)>; label = "SHE"; }; // 追加: しぇ
+        m_she: m_she { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp D &kp LS(N5)>; label = "SHE"; }; 
         m_cha: m_cha { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp A &kp LS(N7)>; label = "CHA"; };
         m_chu: m_chu { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp A &kp LS(N8)>; label = "CHU"; };
         m_cho_y: m_cho_y { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp A &kp LS(N9)>; label = "CHO_Y"; };
-        m_che: m_che { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp A &kp LS(N5)>; label = "CHE"; }; // 追加: ちぇ
+        m_che: m_che { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp A &kp LS(N5)>; label = "CHE"; }; 
         m_nya: m_nya { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp I &kp LS(N7)>; label = "NYA"; };
         m_nyu: m_nyu { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp I &kp LS(N8)>; label = "NYU"; };
         m_nyo: m_nyo { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp I &kp LS(N9)>; label = "NYO"; };
@@ -223,21 +216,19 @@
         m_ryu: m_ryu { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp L &kp LS(N8)>; label = "RYU"; };
         m_ryo: m_ryo { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp L &kp LS(N9)>; label = "RYO"; };
 
-        // --- 外来語用マクロ ---
         m_fa:  m_fa  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N2 &kp LS(N3)>; label = "FA"; };
         m_fi:  m_fi  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N2 &kp LS(E)>;  label = "FI"; };
         m_fyu: m_fyu { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N2 &kp LS(N8)>; label = "FYU"; };
         m_fe:  m_fe  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N2 &kp LS(N5)>; label = "FE"; };
         m_fo:  m_fo  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N2 &kp LS(N6)>; label = "FO"; };
 
-        // --- 濁音・半濁音拗音マクロ ---
         m_gya: m_gya { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp G &kp LEFT_BRACKET &kp LS(N7)>; label = "GYA"; };
         m_gyu: m_gyu { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp G &kp LEFT_BRACKET &kp LS(N8)>; label = "GYU"; };
         m_gyo: m_gyo { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp G &kp LEFT_BRACKET &kp LS(N9)>; label = "GYO"; };
         m_ja:  m_ja  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp D &kp LEFT_BRACKET &kp LS(N7)>; label = "JA"; };
         m_ju:  m_ju  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp D &kp LEFT_BRACKET &kp LS(N8)>; label = "JU"; };
         m_jo:  m_jo  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp D &kp LEFT_BRACKET &kp LS(N9)>; label = "JO"; };
-        m_je:  m_je  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp D &kp LEFT_BRACKET &kp LS(N5)>; label = "JE"; }; // 追加: じぇ
+        m_je:  m_je  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp D &kp LEFT_BRACKET &kp LS(N5)>; label = "JE"; }; 
         m_bya: m_bya { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp V &kp LEFT_BRACKET &kp LS(N7)>; label = "BYA"; };
         m_byu: m_byu { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp V &kp LEFT_BRACKET &kp LS(N8)>; label = "BYU"; };
         m_byo: m_byo { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp V &kp LEFT_BRACKET &kp LS(N9)>; label = "BYO"; };
@@ -248,10 +239,6 @@
         m_vi:  m_vi  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N2 &kp LEFT_BRACKET &kp LS(E)>;  label = "VI"; };
         m_ve:  m_ve  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N2 &kp LEFT_BRACKET &kp LS(N5)>; label = "VE"; };
         m_vo:  m_vo  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N2 &kp LEFT_BRACKET &kp LS(N6)>; label = "VO"; };
-
-        // --- 追加: hold-tapで使用するための引数1マクロ（中身は既存と同等） ---
-        m_colon_sp_1: m_colon_sp_1 { compatible = "zmk,behavior-macro"; #binding-cells = <1>; bindings = <&kp LANGUAGE_2 &kp SPACE &kp SQT &kp SPACE &kp LANGUAGE_1>; label = "M_COLON_SP_1"; };
-        m_slash_sp_1: m_slash_sp_1 { compatible = "zmk,behavior-macro"; #binding-cells = <1>; bindings = <&kp LANGUAGE_2 &kp SPACE &kp SLASH &kp SPACE &kp LANGUAGE_1>; label = "M_SLASH_SP_1"; };
     };
 
     behaviors {
@@ -259,17 +246,34 @@
         lt_scroll: lt_scroll { compatible = "zmk,behavior-hold-tap"; label = "LT_SCROLL"; bindings = <&mo>, <&kp>; #binding-cells = <2>; tapping-term-ms = <100>; quick-tap-ms = <120>; flavor = "hold-preferred"; };
         lt_retro: lt_retro { compatible = "zmk,behavior-hold-tap"; label = "LT_RETRO"; bindings = <&mo>, <&kp>; #binding-cells = <2>; tapping-term-ms = <100>; quick-tap-ms = <120>; retro-tap; flavor = "balanced"; };
 
-        // --- 追加: タップでマクロ、ホールドで機能を呼び出す hold-tap ---
-        mt_colon: mt_colon { compatible = "zmk,behavior-hold-tap"; label = "MT_COLON"; bindings = <&kp>, <&m_colon_sp_1>; #binding-cells = <2>; tapping-term-ms = <200>; quick-tap-ms = <175>; flavor = "balanced"; };
-        lt_slash: lt_slash { compatible = "zmk,behavior-hold-tap"; label = "LT_SLASH"; bindings = <&mo>, <&m_slash_sp_1>; #binding-cells = <2>; tapping-term-ms = <200>; quick-tap-ms = <175>; flavor = "balanced"; };
+        // --- 追加: 引数0の専用 Hold-Tap（これならコンパイルエラーになりません） ---
+        ht_colon: ht_colon {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_COLON";
+            #binding-cells = <0>; // 引数なしで呼び出せるように設定
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            bindings = <&kp LEFT_SHIFT>, <&m_colon_sp>; // ホールドでShift、タップでコロンマクロ
+        };
+
+        ht_slash: ht_slash {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_SLASH";
+            #binding-cells = <0>; // 引数なしで呼び出せるように設定
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            bindings = <&mo 2>, <&m_slash_sp>; // ホールドでLayer2透過、タップでスラッシュマクロ
+        };
     };
 
     keymap {
         compatible = "zmk,keymap";
         Basic { bindings = <&kp Q &kp W &kp E &kp R &kp T &kp Y &kp U &kp I &kp O &kp P &mt LEFT_SHIFT A &kp S &kp D &mkp MB1 &kp G &kp LEFT_ALT &kp LA(TAB) &kp H &kp ENTER &lt_scroll 4 K &kp L &lt_retro 6 LEFT_BRACKET &kp Z &kp X &kp C &kp V &kp B &kp F &kp J &kp N &kp M &kp COMMA &kp DOT &lt_retro 7 RIGHT_BRACKET &kp LS(F5) &kp LEFT_WIN &kp LCTRL &lt_bs 3 BACKSPACE &mt LEFT_SHIFT SPACE &lt_retro 2 LANGUAGE_2 &mt LEFT_CONTROL TAB &lt_retro 1 LANGUAGE_1 &lt_retro 5 LS(LG(S))>; };
         
-        // --- 変更: 終盤の左手親指のインデックス38を「&mt_colon LEFT_SHIFT 0」、インデックス39を「&lt_slash 2 0」に変更 ---
-        FUNCTION { bindings = <&kp NUMBER_1 &kp NUMBER_2 &kp NUMBER_3 &kp NUMBER_4 &kp N5 &kp NUMBER_6 &kp N7 &kp N8 &kp N9 &kp N0 &kp INT3 &kp EQUAL &kp MINUS &mkp MB2 &kp QUESTION &trans &trans &kp SEMICOLON &kp SQT &kp NON_US_HASH &kp SLASH &lt_retro 8 INTERNATIONAL_1 &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &lt_retro 9 F12 &kp LA(LC(DELETE)) &kp LG(LS(C)) &kp LG(V) &kp DELETE &mt_colon LEFT_SHIFT 0 &lt_slash 2 0 &trans &trans &kp LC(LS(SEMI))>; };
+        // --- 変更: 左手親指の2つ目・3つ目に専用の引数なしHold-Tap（&ht_colon と &ht_slash）を配置 ---
+        FUNCTION { bindings = <&kp NUMBER_1 &kp NUMBER_2 &kp NUMBER_3 &kp NUMBER_4 &kp N5 &kp NUMBER_6 &kp N7 &kp N8 &kp N9 &kp N0 &kp INT3 &kp EQUAL &kp MINUS &mkp MB2 &kp QUESTION &trans &trans &kp SEMICOLON &kp SQT &kp NON_US_HASH &kp SLASH &lt_retro 8 INTERNATIONAL_1 &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &lt_retro 9 F12 &kp LA(LC(DELETE)) &kp LG(LS(C)) &kp LG(V) &kp DELETE &ht_colon &ht_slash &trans &trans &kp LC(LS(SEMI))>; };
         
         ARROW { bindings = <&kp ESCAPE &trans &trans &trans &trans &kp C_BRI_UP &kp PAGE_UP &kp UP_ARROW &kp PAGE_DOWN &kp C_VOLUME_UP &kp LEFT_SHIFT &kp LG(C_AC_BACK) &trans &kp C_AC_FORWARD &trans &mt LCTRL LEFT_ALT &mt LEFT_SHIFT TAB &kp C_BRI_DN &kp LEFT &trans &kp RIGHT &kp C_VOLUME_DOWN &kp LCTRL &kp LG(UP_ARROW) &trans &trans &trans &trans &trans &trans &trans &kp DOWN &kp HOME &kp C_MUTE &kp LG(LEFT) &kp LG(DOWN) &kp LG(RIGHT) &trans &trans &trans &m_paren_sp &m_bracket_jp &trans>; };
         layer_3 { bindings = <&kp KP_NUMLOCK &trans &trans &trans &trans &kp LS(MINUS) &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp KP_N0 &trans &trans &trans &trans &trans &trans &kp KP_ASTERISK &kp KP_PLUS &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_DOT &trans &trans &trans &trans &trans &trans &kp KP_SLASH &kp KP_MINUS &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp INT3 &trans &trans &trans &trans &trans &trans &m_dquote &m_squote &trans>; };
