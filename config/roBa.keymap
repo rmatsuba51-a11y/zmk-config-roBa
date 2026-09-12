@@ -1227,9 +1227,9 @@
 
         layer_3 {
             bindings = <
-&kp KP_NUMLOCK    &kp LS(LC(UP_ARROW))  &kp F2             &kp LS(SPACE)     &kp LC(SPACE)                                  &kp LS(MINUS)  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N0
+&kp KP_NUMLOCK    &kp LS(LC(UP_ARROW))  &trans             &kp LS(SPACE)     &kp LC(SPACE)                                  &kp LS(MINUS)  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N0
 &kp LC(LS(LEFT))  &kp LA(A)             &kp LC(LS(RIGHT))  &kp LS(LC(SEMI))  &kp LC(LS(SEMI))  &trans      &kp KP_ASTERISK  &kp KP_PLUS    &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_DOT
-&trans            &kp LC(LS(DOWN))      &kp F4             &kp LC(MINUS)     &kp LC(MINUS)     &trans      &kp KP_SLASH     &kp KP_MINUS   &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp INT3
+&trans            &kp LC(LS(DOWN))      &trans             &kp LC(MINUS)     &kp LC(MINUS)     &trans      &kp KP_SLASH     &kp KP_MINUS   &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp INT3
 &trans            &trans                &trans             &trans            &trans            &trans      &m_dquote        &m_squote                                       &trans
             >;
         };
