@@ -1130,6 +1130,44 @@
             bindings = <&kp LANGUAGE_2 &kp SPACE &kp SLASH &kp SPACE &kp LANGUAGE_1>;
             label = "M_SLASH_SP_TAP";
         };
+
+        // --- 追加: Excel用 行・列操作マクロ ---
+
+        m_excel_add_row: m_excel_add_row {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp LS(SPACE)>, <&kp LS(LC(SEMI))>;
+            label = "M_EXCEL_ADD_ROW";
+        };
+
+        m_excel_del_row: m_excel_del_row {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp LS(SPACE)>, <&kp LC(MINUS)>;
+            label = "M_EXCEL_DEL_ROW";
+        };
+
+        m_excel_add_col: m_excel_add_col {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp LC(SPACE)>, <&kp LS(LC(SEMI))>;
+            label = "M_EXCEL_ADD_COL";
+        };
+
+        m_excel_del_col: m_excel_del_col {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp LC(SPACE)>, <&kp LC(MINUS)>;
+            label = "M_EXCEL_DEL_COL";
+        };
     };
 
     behaviors {
@@ -1228,8 +1266,8 @@
         layer_3 {
             bindings = <
 &kp KP_NUMLOCK    &kp LS(LC(UP_ARROW))  &trans             &kp LS(SPACE)     &kp LC(SPACE)                                  &kp LS(MINUS)  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N0
-&kp LC(LS(LEFT))  &kp LA(A)             &kp LC(LS(RIGHT))  &kp LS(LC(SEMI))  &kp LC(LS(SEMI))  &trans      &kp KP_ASTERISK  &kp KP_PLUS    &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_DOT
-&trans            &kp LC(LS(DOWN))      &trans             &kp LC(MINUS)     &kp LC(MINUS)     &trans      &kp KP_SLASH     &kp KP_MINUS   &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp INT3
+&kp LC(LS(LEFT))  &kp LA(A)             &kp LC(LS(RIGHT))  &m_excel_add_row  &m_excel_add_col  &trans      &kp KP_ASTERISK  &kp KP_PLUS    &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_DOT
+&trans            &kp LC(LS(DOWN))      &trans             &m_excel_del_row  &m_excel_del_col  &trans      &kp KP_SLASH     &kp KP_MINUS   &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp INT3
 &trans            &trans                &trans             &trans            &trans            &trans      &m_dquote        &m_squote                                       &trans
             >;
         };
