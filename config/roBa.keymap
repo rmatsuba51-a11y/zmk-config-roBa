@@ -1274,7 +1274,7 @@
             #binding-cells = <0>;
             wait-ms = <40>;
             tap-ms = <40>;
-            bindings = <&kp LS(SPACE)>, <&kp LS(LC(SEMI))>;
+            bindings = <&kp LS(SPACE) &kp LS(LC(SEMI))>;
             label = "M_EXCEL_ADD_ROW";
         };
 
@@ -1283,7 +1283,7 @@
             #binding-cells = <0>;
             wait-ms = <40>;
             tap-ms = <40>;
-            bindings = <&kp LS(SPACE)>, <&kp LC(MINUS)>;
+            bindings = <&kp LS(SPACE) &kp LC(MINUS)>;
             label = "M_EXCEL_DEL_ROW";
         };
 
@@ -1292,7 +1292,7 @@
             #binding-cells = <0>;
             wait-ms = <40>;
             tap-ms = <40>;
-            bindings = <&kp LC(SPACE)>, <&kp LS(LC(SEMI))>;
+            bindings = <&kp LC(SPACE) &kp LS(LC(SEMI))>;
             label = "M_EXCEL_ADD_COL";
         };
 
@@ -1301,7 +1301,7 @@
             #binding-cells = <0>;
             wait-ms = <40>;
             tap-ms = <40>;
-            bindings = <&kp LC(SPACE)>, <&kp LC(MINUS)>;
+            bindings = <&kp LC(SPACE) &kp LC(MINUS)>;
             label = "M_EXCEL_DEL_COL";
         };
 
@@ -1312,7 +1312,7 @@
             #binding-cells = <0>;
             wait-ms = <40>;
             tap-ms = <40>;
-            bindings = <&kp LEFT_ALT>, <&kp A>, <&kp T>;
+            bindings = <&kp LEFT_ALT &kp A &kp T>;
             label = "M_EXCEL_FILTER";
         };
     };
@@ -1412,10 +1412,10 @@
 
         layer_3 {
             bindings = <
-&kp KP_NUMLOCK    &kp LS(LC(UP_ARROW))  &trans             &kp LS(SPACE)     &kp LC(SPACE)                                     &kp LS(MINUS)  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N0
-&kp LC(LS(LEFT))  &m_excel_filter       &kp LC(LS(RIGHT))  &m_excel_add_row  &m_excel_add_col  &kp LC(PAGE_UP)    &kp KP_ASTERISK  &kp KP_PLUS    &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_DOT
-&trans            &kp LC(LS(DOWN))      &trans             &m_excel_del_row  &m_excel_del_col  &kp LC(PAGE_DOWN)  &kp KP_SLASH     &kp KP_MINUS   &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp INT3
-&trans            &trans                &trans             &trans            &trans            &trans             &m_dquote        &m_squote                                       &trans
+&kp LS(SPACE)     &trans            &kp LC(LS(UP_ARROW))    &trans             &kp LC(SPACE)                                             &kp LS(MINUS)  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N0
+&m_excel_add_row  &kp LS(LC(LEFT))  &m_excel_filter         &kp LS(LC(RIGHT))  &m_excel_add_col  &kp LC(PAGE_UP)        &kp KP_ASTERISK  &kp KP_PLUS    &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_DOT
+&m_excel_del_row  &trans            &kp LS(LC(DOWN_ARROW))  &trans             &m_excel_del_col  &kp LC(PAGE_DOWN)      &kp KP_SLASH     &kp KP_MINUS   &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp INT3
+&trans            &trans            &trans                  &trans             &trans            &kp KP_NUMLOCK         &m_dquote        &m_squote                                       &trans
             >;
         };
 
