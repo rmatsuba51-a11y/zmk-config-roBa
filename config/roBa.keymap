@@ -1315,6 +1315,44 @@
             bindings = <&kp LEFT_ALT &kp A &kp T>;
             label = "M_EXCEL_FILTER";
         };
+
+        // --- 追加: Excel用 セル配置マクロ (Alt -> H -> A -> L / C / R / M) ---
+
+        m_excel_align_left: m_excel_align_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp LEFT_ALT &kp H &kp A &kp L>;
+            label = "M_EXCEL_ALIGN_LEFT";
+        };
+
+        m_excel_align_center: m_excel_align_center {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp LEFT_ALT &kp H &kp A &kp C>;
+            label = "M_EXCEL_ALIGN_CENTER";
+        };
+
+        m_excel_align_right: m_excel_align_right {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp LEFT_ALT &kp H &kp A &kp R>;
+            label = "M_EXCEL_ALIGN_RIGHT";
+        };
+
+        m_excel_align_middle: m_excel_align_middle {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp LEFT_ALT &kp H &kp A &kp M>;
+            label = "M_EXCEL_ALIGN_MIDDLE";
+        };
     };
 
     behaviors {
@@ -1412,10 +1450,10 @@
 
         layer_3 {
             bindings = <
-&kp LS(SPACE)     &trans            &kp LC(LS(UP_ARROW))    &trans             &kp LC(SPACE)                                             &kp LS(MINUS)  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N0
-&m_excel_add_row  &kp LS(LC(LEFT))  &m_excel_filter         &kp LS(LC(RIGHT))  &m_excel_add_col  &kp LC(PAGE_UP)        &kp KP_ASTERISK  &kp KP_PLUS    &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_DOT
-&m_excel_del_row  &trans            &kp LS(LC(DOWN_ARROW))  &trans             &m_excel_del_col  &kp LC(PAGE_DOWN)      &kp KP_SLASH     &kp KP_MINUS   &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp INT3
-&trans            &trans            &trans                  &trans             &trans            &kp KP_NUMLOCK         &m_dquote        &m_squote                                       &trans
+&kp LS(SPACE)         &trans                 &kp LC(LS(UP_ARROW))    &trans             &kp LC(SPACE)                                             &kp LS(MINUS)  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N0
+&m_excel_add_row      &kp LS(LC(LEFT))       &m_excel_filter         &kp LS(LC(RIGHT))  &m_excel_add_col  &kp LC(PAGE_UP)        &kp KP_ASTERISK  &kp KP_PLUS    &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_DOT
+&m_excel_del_row      &m_excel_align_middle  &kp LS(LC(DOWN_ARROW))  &trans             &m_excel_del_col  &kp LC(PAGE_DOWN)      &kp KP_SLASH     &kp KP_MINUS   &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp INT3
+&m_excel_align_left   &m_excel_align_center  &m_excel_align_right    &trans             &trans            &kp KP_NUMLOCK         &m_dquote        &m_squote                                       &trans
             >;
         };
 
