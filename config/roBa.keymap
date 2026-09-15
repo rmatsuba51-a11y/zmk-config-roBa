@@ -571,6 +571,63 @@
             key-positions = <25 8 33>;
             bindings = <&m_pyo>;
         };
+
+        // --- 追加: 拗音・外来語コンボ ---
+
+        c_ti {
+            key-positions = <1 30>;
+            bindings = <&m_ti>;
+        };
+
+        c_di_ext {
+            key-positions = <1 21 30>;
+            bindings = <&m_di>;
+        };
+
+        c_tu {
+            key-positions = <11 31>;
+            bindings = <&m_tu>;
+        };
+
+        c_du_ext {
+            key-positions = <11 21 31>;
+            bindings = <&m_du>;
+        };
+
+        c_wi {
+            key-positions = <3 41 30>;
+            bindings = <&m_wi>;
+        };
+
+        c_we {
+            key-positions = <3 41 32>;
+            bindings = <&m_we>;
+        };
+
+        c_wo_ext {
+            key-positions = <3 41 33>;
+            bindings = <&m_wo>;
+        };
+
+        c_tsa {
+            key-positions = <22 29>;
+            bindings = <&m_tsa>;
+        };
+
+        c_tsi {
+            key-positions = <22 30>;
+            bindings = <&m_tsi>;
+        };
+
+        c_tse {
+            key-positions = <22 32>;
+            bindings = <&m_tse>;
+        };
+
+        c_tso {
+            key-positions = <22 33>;
+            bindings = <&m_tso>;
+        };
     };
 
     macros {
@@ -1113,6 +1170,85 @@
             #binding-cells = <0>;
             bindings = <&kp N2 &kp LEFT_BRACKET &kp LS(N6)>;
             label = "VO";
+        };
+
+        // --- 追加: 拗音・外来語マクロ ---
+
+        m_ti: m_ti {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp W &kp LS(E)>;
+            label = "TI";
+        };
+
+        m_di: m_di {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp W &kp LEFT_BRACKET &kp LS(E)>;
+            label = "DI";
+        };
+
+        m_tu: m_tu {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp S &kp LS(N4)>;
+            label = "TU";
+        };
+
+        m_du: m_du {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp S &kp LEFT_BRACKET &kp LS(N4)>;
+            label = "DU";
+        };
+
+        m_wi: m_wi {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp N4 &kp LS(E)>;
+            label = "WI";
+        };
+
+        m_we: m_we {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp N4 &kp LS(N5)>;
+            label = "WE";
+        };
+
+        m_wo: m_wo {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp N4 &kp LS(N6)>;
+            label = "WO";
+        };
+
+        m_tsa: m_tsa {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp Z &kp LS(N3)>;
+            label = "TSA";
+        };
+
+        m_tsi: m_tsi {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp Z &kp LS(E)>;
+            label = "TSI";
+        };
+
+        m_tse: m_tse {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp Z &kp LS(N5)>;
+            label = "TSE";
+        };
+
+        m_tso: m_tso {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp Z &kp LS(N6)>;
+            label = "TSO";
         };
 
         // --- 追加: ZMKの厳格な記述ルール(スキーマ)に準拠した、Hold-Tap用の偽装引数つきマクロ ---
