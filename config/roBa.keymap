@@ -1450,19 +1450,19 @@
 
         ARROW {
             bindings = <
-&kp ESCAPE      &kp LG(C_AC_BACK)  &kp LG(UP_ARROW)  &kp C_AC_FORWARD  &trans                                              &kp C_BRI_UP   &kp PAGE_UP  &kp UP_ARROW  &kp PAGE_DOWN  &kp C_VOLUME_UP
-&kp LEFT_SHIFT  &kp LG(LEFT)       &trans            &kp LG(RIGHT)     &trans  &mt LCTRL LEFT_ALT      &mt LEFT_SHIFT TAB  &kp C_BRI_DN   &kp LEFT     &trans        &kp RIGHT      &kp C_VOLUME_DOWN
-&kp LCTRL       &trans             &kp LG(DOWN)      &trans            &trans  &trans                  &trans              &trans         &kp HOME     &kp DOWN      &kp END        &kp C_MUTE
-&trans          &trans             &trans            &trans            &trans  &trans                  &m_paren_sp         &m_bracket_jp                                            &trans
+&kp ESCAPE      &kp LG(C_AC_BACK)  &kp LG(UP_ARROW)  &kp C_AC_FORWARD  &trans                                    &kp C_BRI_UP   &kp PAGE_UP  &kp UP_ARROW  &kp PAGE_DOWN  &kp C_VOLUME_UP
+&kp LEFT_SHIFT  &kp LG(LEFT)       &trans            &kp LG(RIGHT)     &trans  &kp LC(LS(TAB))      &trans       &kp C_BRI_DN   &kp LEFT     &trans        &kp RIGHT      &kp C_VOLUME_DOWN
+&kp LCTRL       &trans             &kp LG(DOWN)      &trans            &trans  &kp LC(TAB)          &trans       &trans         &kp HOME     &kp DOWN      &kp END        &kp C_MUTE
+&trans          &trans             &trans            &trans            &trans  &trans               &m_paren_sp  &m_bracket_jp                                            &trans
             >;
         };
 
         layer_3 {
             bindings = <
-&m_excel_sel_row      &trans                 &kp LC(LS(UP_ARROW))    &trans             &kp LC(SPACE)                                             &kp LS(MINUS)  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N0
-&m_excel_add_row      &kp LS(LC(LEFT))       &m_excel_filter         &kp LS(LC(RIGHT))  &m_excel_add_col  &kp LC(PAGE_UP)        &kp KP_ASTERISK  &kp KP_PLUS    &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_DOT
-&m_excel_del_row      &m_excel_align_middle  &kp LS(LC(DOWN_ARROW))  &trans             &m_excel_del_col  &kp LC(PAGE_DOWN)      &kp KP_SLASH     &kp KP_MINUS   &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp INT3
-&m_excel_align_left   &m_excel_align_center  &m_excel_align_right    &trans             &trans            &kp KP_NUMLOCK         &m_dquote        &m_squote                                       &trans
+&m_excel_sel_row     &trans                 &kp LC(LS(UP_ARROW))    &trans             &kp LC(SPACE)                                             &kp LS(MINUS)  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N0
+&m_excel_add_row     &kp LS(LC(LEFT))       &m_excel_filter         &kp LS(LC(RIGHT))  &m_excel_add_col  &kp LC(PAGE_UP)        &kp KP_ASTERISK  &kp KP_PLUS    &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_DOT
+&m_excel_del_row     &m_excel_align_middle  &kp LS(LC(DOWN_ARROW))  &trans             &m_excel_del_col  &kp LC(PAGE_DOWN)      &kp KP_SLASH     &kp KP_MINUS   &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp INT3
+&m_excel_align_left  &m_excel_align_center  &m_excel_align_right    &trans             &trans            &kp KP_NUMLOCK         &m_dquote        &m_squote                                       &trans
             >;
         };
 
