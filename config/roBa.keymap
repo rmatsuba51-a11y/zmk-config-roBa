@@ -1450,10 +1450,10 @@
 
         ARROW {
             bindings = <
-&kp ESCAPE      &trans        &kp LG(UP_ARROW)  &trans         &trans                                               &kp C_BRI_UP   &kp PAGE_UP  &kp UP_ARROW  &kp PAGE_DOWN  &kp C_VOLUME_UP
-&kp LEFT_SHIFT  &kp LG(LEFT)  &trans            &kp LG(RIGHT)  &kp LG(C_AC_BACK)  &kp LC(LS(TAB))      &trans       &kp C_BRI_DN   &kp LEFT     &trans        &kp RIGHT      &kp C_VOLUME_DOWN
-&kp LCTRL       &trans        &kp LG(DOWN)      &trans         &kp C_AC_FORWARD   &kp LC(TAB)          &trans       &trans         &kp HOME     &kp DOWN      &kp END        &kp C_MUTE
-&trans          &trans        &trans            &trans         &trans             &trans               &m_paren_sp  &m_bracket_jp                                            &trans
+&kp ESCAPE      &trans        &kp LG(UP_ARROW)  &trans         &trans                                              &kp C_BRI_UP   &kp PAGE_UP  &kp UP_ARROW  &kp PAGE_DOWN  &kp C_VOLUME_UP
+&kp LEFT_SHIFT  &kp LG(LEFT)  &trans            &kp LG(RIGHT)  &kp C_AC_BACK     &kp LC(LS(TAB))      &trans       &kp C_BRI_DN   &kp LEFT     &trans        &kp RIGHT      &kp C_VOLUME_DOWN
+&kp LCTRL       &trans        &kp LG(DOWN)      &trans         &kp C_AC_FORWARD  &kp LC(TAB)          &trans       &trans         &kp HOME     &kp DOWN      &kp END        &kp C_MUTE
+&trans          &trans        &trans            &trans         &trans            &trans               &m_paren_sp  &m_bracket_jp                                            &trans
             >;
         };
 
