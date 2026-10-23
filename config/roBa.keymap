@@ -1251,17 +1251,17 @@
             label = "TSO";
         };
 
-        // --- 追加: ZMKの厳格な記述ルール(スキーマ)に準拠した、Hold-Tap用の偽装引数つきマクロ ---
+        // --- 追加: Hold-Tap用の引数つきマクロ ---
 
         m_colon_sp_tap: m_colon_sp_tap {
-            compatible = "zmk,behavior-macro-one-param"; // 引数を受け取れるマクロ形式
+            compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings = <&kp LANGUAGE_2 &kp SPACE &kp SQT &kp SPACE &kp LANGUAGE_1>;
             label = "M_COLON_SP_TAP";
         };
 
         m_slash_sp_tap: m_slash_sp_tap {
-            compatible = "zmk,behavior-macro-one-param"; // 引数を受け取れるマクロ形式
+            compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings = <&kp LANGUAGE_2 &kp SPACE &kp SLASH &kp SPACE &kp LANGUAGE_1>;
             label = "M_SLASH_SP_TAP";
@@ -1314,7 +1314,7 @@
             label = "M_EXCEL_DEL_COL";
         };
 
-        // --- 追加: Excel用 オートフィルター(プルダウン) マクロ (Alt -> A -> T) ---
+        // --- 追加: Excel用 オートフィルター マクロ ---
 
         m_excel_filter: m_excel_filter {
             compatible = "zmk,behavior-macro";
@@ -1325,7 +1325,7 @@
             label = "M_EXCEL_FILTER";
         };
 
-        // --- 追加: Excel用 セル配置マクロ (Alt -> H -> A -> L / C / R / M) ---
+        // --- 追加: Excel用 セル配置マクロ ---
 
         m_excel_align_left: m_excel_align_left {
             compatible = "zmk,behavior-macro";
@@ -1363,12 +1363,25 @@
             label = "M_EXCEL_ALIGN_MIDDLE";
         };
 
-        // --- 追加: かな入力時でも確実に「¥」を入力するマクロ ---
+        // --- 修正: かな・英数問わず確実に半角の「=」を入力するマクロ ---
+
+        m_equal: m_equal {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LANGUAGE_2 &kp LS(MINUS) &kp LANGUAGE_1>;
+            label = "M_EQUAL";
+        };
+
+        // --- 修正: かな・英数問わず確実に半角の「¥」を入力するマクロ (Alt+0165) ---
 
         m_yen: m_yen {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LANGUAGE_2 &kp INT3 &kp LANGUAGE_1>;
+            wait-ms = <20>;
+            tap-ms = <20>;
+            bindings = <&macro_press &kp LEFT_ALT>,
+                       <&macro_tap &kp KP_N0 &kp KP_N1 &kp KP_N6 &kp KP_N5>,
+                       <&macro_release &kp LEFT_ALT>;
             label = "M_YEN";
         };
     };
@@ -1409,8 +1422,6 @@
             flavor = "balanced";
         };
 
-        // --- 追加: 引数付きマクロを受け付ける正しい形式の Hold-Tap ---
-
         mt_colon: mt_colon {
             compatible = "zmk,behavior-hold-tap";
             label = "MT_COLON";
@@ -1446,8 +1457,6 @@
             >;
         };
 
-        // --- 変更: 左手親指の2つ目・3つ目に専用の Hold-Tap を配置 (最後に 0 というダミー引数を渡して整合性をとっています) ---
-
         FUNCTION {
             bindings = <
 &kp NUMBER_1        &kp NUMBER_2   &kp NUMBER_3  &kp NUMBER_4  &kp N5                                             &kp NUMBER_6   &kp N7   &kp N8           &kp N9     &kp N0
@@ -1468,7 +1477,7 @@
 
         layer_3 {
             bindings = <
-&m_excel_sel_row     &trans                 &kp LC(LS(UP_ARROW))    &trans             &kp LC(SPACE)                                             &kp KP_EQUAL   &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N0
+&m_excel_sel_row     &trans                 &kp LC(LS(UP_ARROW))    &trans             &kp LC(SPACE)                                             &m_equal       &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N0
 &m_excel_add_row     &kp LS(LC(LEFT))       &m_excel_filter         &kp LS(LC(RIGHT))  &m_excel_add_col  &kp LC(PAGE_UP)        &kp KP_ASTERISK  &kp KP_PLUS    &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_DOT
 &m_excel_del_row     &m_excel_align_middle  &kp LS(LC(DOWN_ARROW))  &trans             &m_excel_del_col  &kp LC(PAGE_DOWN)      &kp KP_SLASH     &kp KP_MINUS   &kp KP_N7  &kp KP_N8  &kp KP_N9  &m_yen
 &m_excel_align_left  &m_excel_align_center  &m_excel_align_right    &trans             &trans            &kp KP_NUMLOCK         &m_dquote        &m_squote                                        &trans
