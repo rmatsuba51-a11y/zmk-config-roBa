@@ -1362,6 +1362,15 @@
             bindings = <&kp LEFT_ALT &kp H &kp A &kp M>;
             label = "M_EXCEL_ALIGN_MIDDLE";
         };
+
+        // --- 追加: かな入力時でも確実に「¥」を入力するマクロ ---
+
+        m_yen: m_yen {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LANGUAGE_2 &kp INT3 &kp LANGUAGE_1>;
+            label = "M_YEN";
+        };
     };
 
     behaviors {
@@ -1459,10 +1468,10 @@
 
         layer_3 {
             bindings = <
-&m_excel_sel_row     &trans                 &kp LC(LS(UP_ARROW))    &trans             &kp LC(SPACE)                                             &kp LS(KP_EQUAL)  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N0
-&m_excel_add_row     &kp LS(LC(LEFT))       &m_excel_filter         &kp LS(LC(RIGHT))  &m_excel_add_col  &kp LC(PAGE_UP)        &kp KP_ASTERISK  &kp KP_PLUS       &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_DOT
-&m_excel_del_row     &m_excel_align_middle  &kp LS(LC(DOWN_ARROW))  &trans             &m_excel_del_col  &kp LC(PAGE_DOWN)      &kp KP_SLASH     &kp KP_MINUS      &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp INT3
-&m_excel_align_left  &m_excel_align_center  &m_excel_align_right    &trans             &trans            &kp KP_NUMLOCK         &m_dquote        &m_squote                                          &trans
+&m_excel_sel_row     &trans                 &kp LC(LS(UP_ARROW))    &trans             &kp LC(SPACE)                                             &kp KP_EQUAL   &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N0
+&m_excel_add_row     &kp LS(LC(LEFT))       &m_excel_filter         &kp LS(LC(RIGHT))  &m_excel_add_col  &kp LC(PAGE_UP)        &kp KP_ASTERISK  &kp KP_PLUS    &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_DOT
+&m_excel_del_row     &m_excel_align_middle  &kp LS(LC(DOWN_ARROW))  &trans             &m_excel_del_col  &kp LC(PAGE_DOWN)      &kp KP_SLASH     &kp KP_MINUS   &kp KP_N7  &kp KP_N8  &kp KP_N9  &m_yen
+&m_excel_align_left  &m_excel_align_center  &m_excel_align_right    &trans             &trans            &kp KP_NUMLOCK         &m_dquote        &m_squote                                        &trans
             >;
         };
 
