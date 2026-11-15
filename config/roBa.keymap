@@ -1384,6 +1384,19 @@
                        <&macro_release &kp LEFT_ALT>;
             label = "M_YEN";
         };
+
+        // --- 追加: かな・英数問わず確実に半角の「$」を入力するマクロ (Alt+0036) ---
+
+        m_dollar: m_dollar {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <20>;
+            tap-ms = <20>;
+            bindings = <&macro_press &kp LEFT_ALT>,
+                       <&macro_tap &kp KP_N0 &kp KP_N0 &kp KP_N3 &kp KP_N6>,
+                       <&macro_release &kp LEFT_ALT>;
+            label = "M_DOLLAR";
+        };
     };
 
     behaviors {
@@ -1480,7 +1493,7 @@
 &m_excel_sel_row     &trans                 &kp LC(LS(UP_ARROW))    &trans             &kp LC(SPACE)                                             &m_equal       &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N0
 &m_excel_add_row     &kp LS(LC(LEFT))       &m_excel_filter         &kp LS(LC(RIGHT))  &m_excel_add_col  &kp LC(PAGE_UP)        &kp KP_ASTERISK  &kp KP_PLUS    &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_DOT
 &m_excel_del_row     &m_excel_align_middle  &kp LS(LC(DOWN_ARROW))  &trans             &m_excel_del_col  &kp LC(PAGE_DOWN)      &kp KP_SLASH     &kp KP_MINUS   &kp KP_N7  &kp KP_N8  &kp KP_N9  &m_yen
-&m_excel_align_left  &m_excel_align_center  &m_excel_align_right    &trans             &trans            &kp KP_NUMLOCK         &m_dquote        &m_squote                                        &trans
+&m_excel_align_left  &m_excel_align_center  &m_excel_align_right    &trans             &trans            &kp KP_NUMLOCK         &m_dquote        &m_squote                                        &m_dollar
             >;
         };
 
