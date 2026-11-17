@@ -14,7 +14,6 @@
     tapping-term-ms = <200>;
     quick-tap-ms = <175>;
     require-prior-idle-ms = <35>;
-    retro-tap;
 };
 
 &lt {
@@ -28,36 +27,41 @@
 / {
     combos {
         compatible = "zmk,combos";
-        timeout-ms = <80>;
 
         // --- システム・編集系 (既存) ---
 
         tab {
+            timeout-ms = <80>;
             bindings = <&kp TAB>;
             key-positions = <11 12>;
         };
 
         muhennkann {
+            timeout-ms = <80>;
             bindings = <&to_layer_0 INT_MUHENKAN>;
             key-positions = <11 10>;
         };
 
         select_all {
+            timeout-ms = <80>;
             bindings = <&kp LC(A)>;
             key-positions = <10 22>;
         };
 
         copy {
+            timeout-ms = <80>;
             bindings = <&kp LC(C)>;
             key-positions = <22 24>;
         };
 
         paste {
+            timeout-ms = <80>;
             bindings = <&kp LC(V)>;
             key-positions = <22 25>;
         };
 
         cut {
+            timeout-ms = <80>;
             bindings = <&kp LC(X)>;
             key-positions = <22 23>;
         };
@@ -65,126 +69,176 @@
         // --- 濁音・半濁音コンボ (既存) ---
 
         c_da {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <0 21>;
             bindings = <&da_macro>;
         };
 
         c_de {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <1 21>;
             bindings = <&de_macro>;
         };
 
         c_zu {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <3 21>;
             bindings = <&zu_macro>;
         };
 
         c_ga {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <4 21>;
             bindings = <&ga_macro>;
         };
 
         c_di {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <10 21>;
             bindings = <&di_macro>;
         };
 
         c_do {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <11 21>;
             bindings = <&do_macro>;
         };
 
         c_zi {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <12 21>;
             bindings = <&zi_macro>;
         };
 
         c_gi {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <14 21>;
             bindings = <&gi_macro>;
         };
 
         c_gu {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <17 21>;
             bindings = <&gu_macro>;
         };
 
         c_du {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <22 21>;
             bindings = <&du_macro>;
         };
 
         c_za {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <23 21>;
             bindings = <&za_macro>;
         };
 
         c_zo {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <24 21>;
             bindings = <&zo_macro>;
         };
 
         c_bi {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <25 21>;
             bindings = <&bi_macro>;
         };
 
         c_go {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <26 21>;
             bindings = <&go_macro>;
         };
 
         c_ba {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <27 21>;
             bindings = <&ba_macro>;
         };
 
         c_pa {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <27 33>;
             bindings = <&pa_macro>;
         };
 
         c_pi {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <25 33>;
             bindings = <&pi_macro>;
         };
 
         c_bu {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <1 41 21>;
             bindings = <&bu_macro>;
         };
 
         c_bo {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <12 41 21>;
             bindings = <&bo_macro>;
         };
 
         c_be {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <11 41 21>;
             bindings = <&be_macro>;
         };
 
         c_ze {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <9 41 21>;
             bindings = <&ze_macro>;
         };
 
         c_ge {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <18 41 21>;
             bindings = <&ge_macro>;
         };
 
         c_pu {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <1 41 33>;
             bindings = <&pu_macro>;
         };
 
         c_po {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <12 41 33>;
             bindings = <&po_macro>;
         };
 
         c_pe {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <11 41 33>;
             bindings = <&pe_macro>;
         };
@@ -192,91 +246,127 @@
         // --- 特殊かな L1コンボ (既存) ---
 
         c_nu {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <0 41>;
             bindings = <&kp N1>;
         };
 
         c_fu {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <1 41>;
             bindings = <&kp N2>;
         };
 
         c_a {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <2 41>;
             bindings = <&kp N3>;
         };
 
         c_u {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <3 41>;
             bindings = <&kp N4>;
         };
 
         c_e {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <4 41>;
             bindings = <&kp N5>;
         };
 
         c_o {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <5 41>;
             bindings = <&kp N6>;
         };
 
         c_ho {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <12 41>;
             bindings = <&kp MINUS>;
         };
 
         c_he {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <11 41>;
             bindings = <&kp EQUAL>;
         };
 
         c_ya {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <6 41>;
             bindings = <&kp N7>;
         };
 
         c_yu {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <7 41>;
             bindings = <&kp N8>;
         };
 
         c_yo {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <8 41>;
             bindings = <&kp N9>;
         };
 
         c_wa {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <9 41>;
             bindings = <&kp N0>;
         };
 
         c_cho {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <10 41>;
             bindings = <&kp INT3>;
         };
 
         c_ro {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <21 41>;
             bindings = <&kp INTERNATIONAL_1>;
         };
 
         c_re {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <17 41>;
             bindings = <&kp SEMICOLON>;
         };
 
         c_ke {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <18 41>;
             bindings = <&kp SQT>;
         };
 
         c_mu {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <19 41>;
             bindings = <&kp NON_US_HASH>;
         };
 
         c_me {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <20 41>;
             bindings = <&kp SLASH>;
         };
@@ -284,61 +374,85 @@
         // --- 小書き・句読点 (既存) ---
 
         c_s_i {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <2 38>;
             bindings = <&kp LS(E)>;
         };
 
         c_s_tu {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <22 38>;
             bindings = <&kp LS(Z)>;
         };
 
         c_ten {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <31 38>;
             bindings = <&kp LS(COMMA)>;
         };
 
         c_maru {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <32 38>;
             bindings = <&kp LS(DOT)>;
         };
 
         c_s_a {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <2 38 41>;
             bindings = <&kp LS(N3)>;
         };
 
         c_s_u {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <3 38 41>;
             bindings = <&kp LS(N4)>;
         };
 
         c_s_e {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <4 38 41>;
             bindings = <&kp LS(N5)>;
         };
 
         c_s_o {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <5 38 41>;
             bindings = <&kp LS(N6)>;
         };
 
         c_s_ya {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <6 38 41>;
             bindings = <&kp LS(N7)>;
         };
 
         c_s_yu {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <7 38 41>;
             bindings = <&kp LS(N8)>;
         };
 
         c_s_yo {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <8 38 41>;
             bindings = <&kp LS(N9)>;
         };
 
         c_wo {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <9 38 41>;
             bindings = <&kp LS(N0)>;
         };
@@ -348,226 +462,316 @@
         // ==========================================================
 
         c_kya {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <14 6>;
             bindings = <&m_kya>;
         };
 
         c_kyu {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <14 7>;
             bindings = <&m_kyu>;
         };
 
         c_kyo {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <14 8>;
             bindings = <&m_kyo>;
         };
 
         c_sha {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <12 6>;
             bindings = <&m_sha>;
         };
 
         c_shu {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <12 7>;
             bindings = <&m_shu>;
         };
 
         c_sho {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <12 8>;
             bindings = <&m_sho>;
         };
 
         c_she {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <12 32>;
             bindings = <&m_she>;
         };
 
         c_cha {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <10 6>;
             bindings = <&m_cha>;
         };
 
         c_chu {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <10 7>;
             bindings = <&m_chu>;
         };
 
         c_cho_y {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <10 8>;
             bindings = <&m_cho_y>;
         };
 
         c_che {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <10 32>;
             bindings = <&m_che>;
         };
 
         c_hya {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <25 6>;
             bindings = <&m_hya>;
         };
 
         c_hyu {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <25 7>;
             bindings = <&m_hyu>;
         };
 
         c_hyo {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <25 8>;
             bindings = <&m_hyo>;
         };
 
         c_nya {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <7 1>;
             bindings = <&m_nya>;
         };
 
         c_nyu {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <7 2>;
             bindings = <&m_nyu>;
         };
 
         c_nyo {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <7 3>;
             bindings = <&m_nyo>;
         };
 
         c_mya {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <29 1>;
             bindings = <&m_mya>;
         };
 
         c_myu {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <29 2>;
             bindings = <&m_myu>;
         };
 
         c_myo {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <29 3>;
             bindings = <&m_myo>;
         };
 
         c_rya {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <20 1>;
             bindings = <&m_rya>;
         };
 
         c_ryu {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <20 2>;
             bindings = <&m_ryu>;
         };
 
         c_ryo {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <20 3>;
             bindings = <&m_ryo>;
         };
 
         c_fa {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <1 41 29>;
             bindings = <&m_fa>;
         };
 
         c_fi {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <1 41 30>;
             bindings = <&m_fi>;
         };
 
         c_fyu {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <1 41 7>;
             bindings = <&m_fyu>;
         };
 
         c_fe {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <1 41 32>;
             bindings = <&m_fe>;
         };
 
         c_fo {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <1 41 33>;
             bindings = <&m_fo>;
         };
 
         c_gya {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <14 6 21>;
             bindings = <&m_gya>;
         };
 
         c_gyu {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <14 7 21>;
             bindings = <&m_gyu>;
         };
 
         c_gyo {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <14 8 21>;
             bindings = <&m_gyo>;
         };
 
         c_ja {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <12 6 21>;
             bindings = <&m_ja>;
         };
 
         c_ju {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <12 7 21>;
             bindings = <&m_ju>;
         };
 
         c_jo {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <12 8 21>;
             bindings = <&m_jo>;
         };
 
         c_je {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <12 32 21>;
             bindings = <&m_je>;
         };
 
         c_bya {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <25 6 21>;
             bindings = <&m_bya>;
         };
 
         c_byu {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <25 7 21>;
             bindings = <&m_byu>;
         };
 
         c_byo {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <25 8 21>;
             bindings = <&m_byo>;
         };
 
         c_va {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <1 41 21 29>;
             bindings = <&m_va>;
         };
 
         c_vi {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <1 41 21 30>;
             bindings = <&m_vi>;
         };
 
         c_ve {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <1 41 21 32>;
             bindings = <&m_ve>;
         };
 
         c_vo {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <1 41 21 33>;
             bindings = <&m_vo>;
         };
 
         c_pya {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <25 6 33>;
             bindings = <&m_pya>;
         };
 
         c_pyu {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <25 7 33>;
             bindings = <&m_pyu>;
         };
 
         c_pyo {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <25 8 33>;
             bindings = <&m_pyo>;
         };
@@ -575,56 +779,78 @@
         // --- 追加: 拗音・外来語コンボ ---
 
         c_ti {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <1 30>;
             bindings = <&m_ti>;
         };
 
         c_di_ext {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <1 21 30>;
             bindings = <&m_di>;
         };
 
         c_tu {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <11 31>;
             bindings = <&m_tu>;
         };
 
         c_du_ext {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <11 21 31>;
             bindings = <&m_du>;
         };
 
         c_wi {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <3 41 30>;
             bindings = <&m_wi>;
         };
 
         c_we {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <3 41 32>;
             bindings = <&m_we>;
         };
 
         c_wo_ext {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <3 41 33>;
             bindings = <&m_wo>;
         };
 
         c_tsa {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <22 29>;
             bindings = <&m_tsa>;
         };
 
         c_tsi {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <22 30>;
             bindings = <&m_tsi>;
         };
 
         c_tse {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <22 32>;
             bindings = <&m_tse>;
         };
 
         c_tso {
+            timeout-ms = <80>;
+            layers = <0>;
             key-positions = <22 33>;
             bindings = <&m_tso>;
         };
@@ -818,6 +1044,8 @@
         m_paren_sp: m_paren_sp {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
+            wait-ms = <20>;
+            tap-ms = <20>;
             bindings = <&kp LANGUAGE_2 &kp SPACE &kp LS(N8) &kp LS(N9) &kp SPACE &kp LEFT &kp LEFT &kp LANGUAGE_1>;
             label = "M_PAREN_SP";
         };
@@ -825,6 +1053,8 @@
         m_bracket_jp: m_bracket_jp {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
+            wait-ms = <20>;
+            tap-ms = <20>;
             bindings = <&kp LANGUAGE_2 &kp RBKT &kp NON_US_HASH &kp LEFT &kp LANGUAGE_1>;
             label = "M_BRACKET_JP";
         };
@@ -832,6 +1062,8 @@
         m_dquote: m_dquote {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
+            wait-ms = <20>;
+            tap-ms = <20>;
             bindings = <&kp LANGUAGE_2 &kp LS(N2) &kp LS(N2) &kp LEFT &kp LANGUAGE_1>;
             label = "M_DQUOTE";
         };
@@ -839,6 +1071,8 @@
         m_squote: m_squote {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
+            wait-ms = <20>;
+            tap-ms = <20>;
             bindings = <&kp LANGUAGE_2 &kp LS(N7) &kp LS(N7) &kp LEFT &kp LANGUAGE_1>;
             label = "M_SQUOTE";
         };
@@ -846,6 +1080,8 @@
         m_colon_sp: m_colon_sp {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
+            wait-ms = <20>;
+            tap-ms = <20>;
             bindings = <&kp LANGUAGE_2 &kp SPACE &kp SQT &kp SPACE &kp LANGUAGE_1>;
             label = "M_COLON_SP";
         };
@@ -853,6 +1089,8 @@
         m_slash_sp: m_slash_sp {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
+            wait-ms = <20>;
+            tap-ms = <20>;
             bindings = <&kp LANGUAGE_2 &kp SPACE &kp SLASH &kp SPACE &kp LANGUAGE_1>;
             label = "M_SLASH_SP";
         };
@@ -1256,6 +1494,8 @@
         m_colon_sp_tap: m_colon_sp_tap {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
+            wait-ms = <20>;
+            tap-ms = <20>;
             bindings = <&kp LANGUAGE_2 &kp SPACE &kp SQT &kp SPACE &kp LANGUAGE_1>;
             label = "M_COLON_SP_TAP";
         };
@@ -1263,6 +1503,8 @@
         m_slash_sp_tap: m_slash_sp_tap {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
+            wait-ms = <20>;
+            tap-ms = <20>;
             bindings = <&kp LANGUAGE_2 &kp SPACE &kp SLASH &kp SPACE &kp LANGUAGE_1>;
             label = "M_SLASH_SP_TAP";
         };
@@ -1368,6 +1610,8 @@
         m_equal: m_equal {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
+            wait-ms = <20>;
+            tap-ms = <20>;
             bindings = <&kp LANGUAGE_2 &kp LS(MINUS) &kp LANGUAGE_1>;
             label = "M_EQUAL";
         };
