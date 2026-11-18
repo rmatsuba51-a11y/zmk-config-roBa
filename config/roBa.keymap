@@ -371,87 +371,89 @@
             bindings = <&kp SLASH>;
         };
 
-        // --- 小書き・句読点 (既存) ---
+        // --- 小書き・句読点 ---
+        // 【修正】スペース(38)を含むコンボは、文字→スペース変換の
+        //         ロール打鍵で誤発火しやすいため timeout-ms を 80 → 40 に短縮
 
         c_s_i {
-            timeout-ms = <80>;
+            timeout-ms = <40>;
             layers = <0>;
             key-positions = <2 38>;
             bindings = <&kp LS(E)>;
         };
 
         c_s_tu {
-            timeout-ms = <80>;
+            timeout-ms = <40>;
             layers = <0>;
             key-positions = <22 38>;
             bindings = <&kp LS(Z)>;
         };
 
         c_ten {
-            timeout-ms = <80>;
+            timeout-ms = <40>;
             layers = <0>;
             key-positions = <31 38>;
             bindings = <&kp LS(COMMA)>;
         };
 
         c_maru {
-            timeout-ms = <80>;
+            timeout-ms = <40>;
             layers = <0>;
             key-positions = <32 38>;
             bindings = <&kp LS(DOT)>;
         };
 
         c_s_a {
-            timeout-ms = <80>;
+            timeout-ms = <40>;
             layers = <0>;
             key-positions = <2 38 41>;
             bindings = <&kp LS(N3)>;
         };
 
         c_s_u {
-            timeout-ms = <80>;
+            timeout-ms = <40>;
             layers = <0>;
             key-positions = <3 38 41>;
             bindings = <&kp LS(N4)>;
         };
 
         c_s_e {
-            timeout-ms = <80>;
+            timeout-ms = <40>;
             layers = <0>;
             key-positions = <4 38 41>;
             bindings = <&kp LS(N5)>;
         };
 
         c_s_o {
-            timeout-ms = <80>;
+            timeout-ms = <40>;
             layers = <0>;
             key-positions = <5 38 41>;
             bindings = <&kp LS(N6)>;
         };
 
         c_s_ya {
-            timeout-ms = <80>;
+            timeout-ms = <40>;
             layers = <0>;
             key-positions = <6 38 41>;
             bindings = <&kp LS(N7)>;
         };
 
         c_s_yu {
-            timeout-ms = <80>;
+            timeout-ms = <40>;
             layers = <0>;
             key-positions = <7 38 41>;
             bindings = <&kp LS(N8)>;
         };
 
         c_s_yo {
-            timeout-ms = <80>;
+            timeout-ms = <40>;
             layers = <0>;
             key-positions = <8 38 41>;
             bindings = <&kp LS(N9)>;
         };
 
         c_wo {
-            timeout-ms = <80>;
+            timeout-ms = <40>;
             layers = <0>;
             key-positions = <9 38 41>;
             bindings = <&kp LS(N0)>;
